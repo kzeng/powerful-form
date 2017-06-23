@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Pform */
@@ -10,6 +11,11 @@ $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => '表单', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+<script>
+    var ajaxUrl = "<?= Url::to(['/site/ajax-broker']); ?>";
+</script>
+
 <div class="pform-view">
 
     <h1>
@@ -37,6 +43,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'uid',
             'title',
+            [
+                'label' => '包含字段',
+                'value' => $model->getFormField($model),
+                'format'=> 'html',
+            ],
+
             'created_at:datetime',
             'updated_at:datetime',
             'user_id',
@@ -47,6 +59,9 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 
+<!-- Modal -->
+
+
 <div class="modal fade"  id="myModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -54,19 +69,21 @@ $this->params['breadcrumbs'][] = $this->title;
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h3 class="modal-title">新增字段</h3>
             </div>
+
+            
             <div class="modal-body">
 
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group field-product-title">
-                            <h3><P style="line-height:30px"><?= $model->title ?> </P></h3>
+                            <h3><P><?= $model->title ?> </P></h3>
                             <p><?= $model->description ?></p>
                         </div>
                     </div>
                 </div>
 
                 <hr>
-
+                <input type="hidden" id="form_uid" value="<?= $model->uid ?>">
                 <div class="form-group">
                     <label class="control-label" for="field_title">字段名称</label>
                     <input type="text" id="field_title" class="form-control" name="field_title" maxlength="32" placeholder="填写字段名称，如 名字，手机号码 ...">
@@ -76,15 +93,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="form-group">
                     <label class="control-label" for="field_type">字段类型</label>
                     <select class="form-control" id="field_type" name="field_type">
-                    <option>普通文本</option>
-                    <option>电话号码</option>
-                    <option>电子邮箱</option>
-                    <option>单项选择</option>
-                    <option>多项选择</option>
+                    <option value="1">普通文本</option>
+                    <option value="2">电话号码</option>
+                    <option value="3">电子邮箱</option>
+                    <option value="4">单项选择</option>
+                    <option value="5">多项选择</option>
                     </select>
                     <div class="help-block"></div>
                 </div>
-
 
                 <div class="form-group">
                     <label class="control-label" for="field_value">字段取值范围</label>
@@ -113,7 +129,56 @@ $this->params['breadcrumbs'][] = $this->title;
     </div><!-- /.modal-dialog -->
 </div>
 
+<script type="text/javascript">
+    var form_uid;
+    var field_title;
+    var field_type;
+    var field_value;
+    var field_placeholder;
+    var field_order;
+
+
+    function addMetadataAjax() {
+        var args = {
+            'classname': '\\backend\\models\\Pform',
+            'funcname': 'addMetadataAjax',
+            'params': {
+                'form_uid': form_uid,
+                'field_title': field_title,
+                'field_type': field_type,
+                'field_value': field_value,
+                'field_placeholder': field_placeholder,
+                'field_order': field_order,
+            }
+        };
+        $.ajax({
+            url: ajaxUrl,
+            type: 'GET',
+            cache: false,
+            dataType: 'json',
+            data: 'args=' + JSON.stringify(args),
+            success: function (ret) {
+                location.reload();
+            },
+            error: function () {
+            }
+        });
+    }
+
+    $('#addMetadata').click (function () {
+
+        form_uid = $('#form_uid').val();
+        field_title = $('#field_title').val();
+        field_type = $('#field_type').val();
+        field_value = $('#field_value').val();
+        field_placeholder = $('#field_placeholder').val();
+        field_order = $('#field_order').val();
+
+        //alert(form_uid+"--"+field_title+"--"+field_type+"--"+field_value+"--"+field_placeholder+"--"+field_order);
+
+        addMetadataAjax();
+    });
 
 
 
-
+</script>

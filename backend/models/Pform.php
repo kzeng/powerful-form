@@ -60,4 +60,56 @@ class Pform extends \yii\db\ActiveRecord
             'description' => '简要描述',
         ];
     }
+
+
+    public static function addMetadataAjax($form_uid, $field_title, $field_type, $field_value, $field_placeholder, $field_order ) {
+        /*
+         * @property integer $id
+         * @property string $title
+         * @property integer $type
+         * @property string $value
+         * @property string $placeholder
+         * @property integer $sort
+         * @property string $pform_uid
+        */
+        // var form_uid;
+        // var field_title;
+        // var field_type;
+        // var field_value;
+        // var field_placeholder;
+        // var field_order;
+
+        $metadata = new \backend\models\PformField;
+
+        $metadata->title = $field_title;
+        $metadata->type = $field_type;
+        $metadata->value = $field_value;
+        $metadata->placeholder = $field_placeholder;
+        $metadata->sort = $field_order;
+        $metadata->pform_uid = $form_uid;
+
+        $metadata->save(false);
+
+        return \yii\helpers\Json::encode(['code' => 0]);
+    }
+    
+
+    static function getFormField($model)
+    {
+        $formfields = \backend\models\PformField::find()
+                        ->where(["pform_uid" => $model->uid])
+                        ->all();
+
+        $field_str = "";
+        if(empty($formfields))
+            return $field_str;
+
+        foreach ($formfields as $formfield) {
+            $field_str = $field_str."【".$formfield->title."】<br>";
+        }
+        return "<span style='color:blue; font-size:14pt'>".$field_str."</span>";
+    }
+
+
+
 }

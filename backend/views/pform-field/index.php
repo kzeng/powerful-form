@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'value',
             'placeholder',
             // 'sort',
-            // 'pform_uid',
+            'pform_uid',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

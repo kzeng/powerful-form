@@ -25,19 +25,31 @@ $this->params['breadcrumbs'][] = $this->title;
             //['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'uid',
+            //'uid',
             'title',
             'description',
 
             [
                 'label' => '包含字段',
                 'value'=>function ($model, $key, $index, $column) {
-                    return '';
+
+                    $formfields = \backend\models\PformField::find()
+                                    ->where(["pform_uid" => $model->uid])
+                                    ->all();
+
+                    $field_str = "";
+                    if(empty($formfields))
+                        return $field_str;
+
+                    foreach ($formfields as $formfield) {
+                        $field_str = $field_str."【".$formfield->title."】<br>";
+                    }
+                    return "<span style='color:blue; font-size:12pt'>".$field_str."</span>";
                 },
+                'format' => 'html',
                 //'filter' => \common\models\CampaignOrder::getGhOption(),
                 'headerOptions' => array('style'=>'width:25%;'),
             ],
-
 
             // 'created_at:datetime',
             // 'updated_at:datetime',

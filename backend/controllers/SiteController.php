@@ -26,7 +26,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'ajax-broker'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -41,6 +41,7 @@ class SiteController extends Controller
         ];
     }
 
+      
     /**
      * @inheritdoc
      */
@@ -94,5 +95,10 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionAjaxBroker($args) {
+        $args = json_decode($args, true);
+        return call_user_func_array(array($args['classname'], $args['funcname']), $args['params']);
     }
 }
