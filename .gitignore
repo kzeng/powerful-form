@@ -4,6 +4,8 @@
 # phpstorm project files
 .idea
 
+.phpintel
+
 # netbeans project files
 nbproject
 
