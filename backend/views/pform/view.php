@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model backend\models\Pform */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => '修改表单', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '表单', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pform-view">
@@ -67,33 +67,40 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <hr>
 
-                <div class="form-group field-productmetadata-meta_key">
-                    <label class="control-label" for="productmetadata-meta_key">字段名称</label>
-                    <input type="text" id="meta_key" class="form-control" name="field_title" maxlength="32" placeholder="填写字段名称，如 名字，手机号码 ...">
+                <div class="form-group">
+                    <label class="control-label" for="field_title">字段名称</label>
+                    <input type="text" id="field_title" class="form-control" name="field_title" maxlength="32" placeholder="填写字段名称，如 名字，手机号码 ...">
                     <div class="help-block"></div>
                 </div>
               
-                <div class="form-group field-productmetadata-meta_key">
-                    <label class="control-label" for="productmetadata-meta_key">字段类型</label>
-                    <input type="text" id="meta_key" class="form-control" name="field_type" maxlength="32">
+                <div class="form-group">
+                    <label class="control-label" for="field_type">字段类型</label>
+                    <select class="form-control" id="field_type" name="field_type">
+                    <option>普通文本</option>
+                    <option>电话号码</option>
+                    <option>电子邮箱</option>
+                    <option>单项选择</option>
+                    <option>多项选择</option>
+                    </select>
                     <div class="help-block"></div>
                 </div>
 
-                <div class="form-group field-productmetadata-meta_key">
-                    <label class="control-label" for="productmetadata-meta_key">字段取值范围</label>
-                    <input type="text" id="meta_key" class="form-control" name="field_value" maxlength="32">
+
+                <div class="form-group">
+                    <label class="control-label" for="field_value">字段取值范围</label>
+                    <input type="text" id="field_value" class="form-control" name="field_value" maxlength="255">
                     <div class="help-block"></div>
                 </div>
 
-                <div class="form-group field-productmetadata-meta_key">
-                    <label class="control-label" for="productmetadata-meta_key">字段提示语</label>
-                    <input type="text" id="meta_key" class="form-control" name="field_placeholder" maxlength="32">
+                <div class="form-group">
+                    <label class="control-label" for="field_placeholder">字段提示语</label>
+                    <input type="text" id="field_placeholder" class="form-control" name="field_placeholder" maxlength="255">
                     <div class="help-block"></div>
                 </div>
 
-                <div class="form-group field-productmetadata-meta_key">
-                    <label class="control-label" for="productmetadata-meta_key">排序</label>
-                    <input type="text" id="meta_key" class="form-control" name="field_order" maxlength="32">
+                <div class="form-group">
+                    <label class="control-label" for="field_order">排序</label>
+                    <input type="text" id="field_order" class="form-control" name="field_order" maxlength="32">
                     <div class="help-block"></div>
                 </div>
 

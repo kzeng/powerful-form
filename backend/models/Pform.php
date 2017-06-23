@@ -37,8 +37,8 @@ class Pform extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['uid', 'title', 'create_time', 'updated_at', 'user_id', 'description'], 'required'],
-            [['create_time', 'updated_at', 'user_id'], 'integer'],
+            [['uid', 'title', 'created_at', 'updated_at', 'user_id', 'description'], 'required'],
+            [['created_at', 'updated_at', 'user_id'], 'integer'],
             [['uid'], 'string', 'max' => 64],
             [['title'], 'string', 'max' => 255],
             [['description'], 'string', 'max' => 512],
