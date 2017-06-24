@@ -40,7 +40,7 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => '首页', 'url' => ['/site/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -72,11 +72,11 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; 超级表单 <?= date('Y') ?></p>
+        <p class="center-block text-center">&copy; 超级表单 <?= date('Y') ?></p>
 
         <!--
         <p class="pull-right"><//?= Yii::powered() ?></p>
-        ->
+        -->
     </div>
 </footer>
 
