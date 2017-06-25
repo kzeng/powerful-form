@@ -71,10 +71,6 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="container">
         <p class="center-block text-center">&copy; 超级表单 <?= date('Y') ?></p>
-
-<!-- 
-        <p class="pull-right"><//?= Yii::powered() ?></p> 
--->
     </div>
 </footer>
 
