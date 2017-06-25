@@ -13,6 +13,8 @@ $this->title = '超级表单';
         <p class="lead">超级表单帮你收集和管理日常工作中的数据，把几小时的工作节约至零。</p>
         <br>
         <p>
+            <a href="http://pf.mitoto.cn" class="btn btn-lg btn-success">前台展示</a>
+                 &nbsp;&nbsp;
             <?= Html::a("免费使用 <span class='glyphicon glyphicon-cog'></span>", ['pform/index'], ['class' => 'btn btn-lg btn-success']) ?>
                 &nbsp;&nbsp;
             <?= Html::a("查看数据 <span class='glyphicon glyphicon-eye-open'></span>", ['customer-pform/index'], ['class' => 'btn btn-lg btn-primary']) ?>
