@@ -29,7 +29,7 @@ class CustomerPformController extends Controller
                     [
                         'actions' => ['create'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['?'],
                     ],
                 ],
             ],
