@@ -9,7 +9,6 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-use yii\filters\AccessControl;
 
 /**
  * PformFieldController implements the CRUD actions for PformField model.
@@ -22,17 +21,6 @@ class PformFieldController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['create'],
-                        'allow' => true,
-                        'roles' => ['?'],
-                    ],
-                ],
-            ],
-
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
