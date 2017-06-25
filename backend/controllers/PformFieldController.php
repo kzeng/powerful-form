@@ -28,7 +28,7 @@ class PformFieldController extends Controller
                     [
                         'actions' => ['create'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['?'],
                     ],
                 ],
             ],
