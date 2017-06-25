@@ -41,7 +41,8 @@ class PformSearch extends Pform
      */
     public function search($params)
     {
-        $query = Pform::find();
+        //$query = Pform::find();
+        $query = Pform::find()->where(['user_id' => Yii::$app->user->id]);
 
         // add conditions that should always apply here
 

@@ -4,6 +4,9 @@ namespace backend\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+
+use yii\helpers\Html;
+
 /**
  * This is the model class for table "pform".
  *
@@ -17,6 +20,8 @@ use yii\behaviors\TimestampBehavior;
  */
 class Pform extends \yii\db\ActiveRecord
 {
+    public $file;
+
     /**
      * @inheritdoc
      */
@@ -37,10 +42,13 @@ class Pform extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['uid', 'title', 'created_at', 'updated_at', 'user_id', 'description'], 'required'],
+            [['uid', 'title', 'created_at', 'updated_at', 'user_id'], 'required'],
+            [['form_img_url', 'file', 'description', 'detail'], 'safe'],
             [['created_at', 'updated_at', 'user_id'], 'integer'],
             [['uid'], 'string', 'max' => 64],
             [['title'], 'string', 'max' => 255],
+            [['detail'], 'string'],
+            [['file'], 'file'],
             [['description'], 'string', 'max' => 512],
         ];
     }
@@ -58,6 +66,9 @@ class Pform extends \yii\db\ActiveRecord
             'updated_at' => '更新时间',
             'user_id' => '创建者',
             'description' => '简要描述',
+            'detail' => '表单详情介绍',
+            'form_img_url' => '图片',
+            'file' => '图片文件',
         ];
     }
 
@@ -92,7 +103,27 @@ class Pform extends \yii\db\ActiveRecord
 
         return \yii\helpers\Json::encode(['code' => 0]);
     }
-    
+
+    public static function addCustomerFormData($form_uid, $myformfield_id, $myformfield) {
+
+        $myformfield_arr = explode('<====>', $myformfield);
+        $myformfield_id_arr = explode('<====>', $myformfield_id);
+
+         for ($i= 0;$i< count($myformfield_arr); $i++){
+            $value= $myformfield_arr[$i];
+            $pform_field_id = $myformfield_id_arr[$i];
+
+            $cp = new \backend\models\CustomerPform;
+            $cp->pform_uid = $form_uid;
+            $cp->pform_field_id = $pform_field_id;
+            $cp->value = $value;
+
+            $cp->save(false);
+         }
+
+        return \yii\helpers\Json::encode(['code' => 0]);
+    }
+
 
     static function getFormField($model)
     {
@@ -105,7 +136,8 @@ class Pform extends \yii\db\ActiveRecord
             return $field_str;
 
         foreach ($formfields as $formfield) {
-            $field_str = $field_str."【".$formfield->title."】<br>";
+
+            $field_str = $field_str.  Html::a('删除', ['delformfield', 'view_id' => $model->id, 'formfield_id' => $formfield->id], ['class' => 'btn btn-danger btn-xs']) . "【".$formfield->title."】<br>";
         }
         return "<span style='color:blue; font-size:14pt'>".$field_str."</span>";
     }

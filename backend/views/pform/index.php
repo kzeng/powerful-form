@@ -24,10 +24,47 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            [
+                'attribute' => 'id',
+                'headerOptions' => array('style'=>'width:8%;'),
+            ], 
+            //'form_img_url',
+
+            [
+                'attribute' => 'form_img_url',
+                'format' => 'html',
+                'value' => function($model, $key, $index, $column){
+                    if(!empty($model->form_img_url))
+                        $form_img_url = '<img src=' . $model->form_img_url .' width=160px height=90px>';
+                    else
+                        $form_img_url = '';
+
+                    return $form_img_url;
+                },
+                'headerOptions' => array('style'=>'width:160px;'),
+            ],
+
             //'uid',
             'title',
-            'description',
+
+           //'description',
+
+            // [
+            //     'attribute' => 'detail',
+            //     'format' => 'html',
+            // ],
+
+            [
+                'label' => '表单预览',
+                'format' => 'html',
+                'value'=>function ($model, $key, $index, $column) {
+                    //$url = "/customer-pform/create?pform_uid=".$model->uid;
+
+                    return Html::a('预览', ['customer-pform/create', 'pform_uid' =>$model->uid]);
+                },
+
+                //'headerOptions' => array('style'=>'width:70px;'),
+            ],
 
             [
                 'label' => '包含字段',

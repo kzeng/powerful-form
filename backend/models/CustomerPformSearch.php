@@ -7,6 +7,7 @@ use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use backend\models\CustomerPform;
 
+use backend\models\Pform;
 /**
  * CustomerPformSearch represents the model behind the search form about `backend\models\CustomerPform`.
  */
@@ -41,12 +42,25 @@ class CustomerPformSearch extends CustomerPform
      */
     public function search($params)
     {
-        $query = CustomerPform::find();
+        $pforms = Pform::find()->where(['user_id' => Yii::$app->user->id])->all();
+        $pform_uid = array();
+        foreach ($pforms as $pform) {
+            $pform_uid[] = $pform->uid;
+        }
+
+        //$query = CustomerPform::find();
+        $query = CustomerPform::find()
+                ->where(['in', 'pform_uid', $pform_uid]);
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_ASC,
+                ],
+            ],
         ]);
 
         $this->load($params);

@@ -3,11 +3,19 @@
 namespace backend\controllers;
 
 use Yii;
+use yii\helpers\Html;
+use yii\helpers\Url;
+
 use backend\models\Pform;
 use backend\models\PformSearch;
+
+use backend\models\PformField;
+
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+
+use  yii\web\UploadedFile;
 
 /**
  * PformController implements the CRUD actions for Pform model.
@@ -67,9 +75,26 @@ class PformController extends Controller
 
         if ($model->load(Yii::$app->request->post()) ) 
         {
+             //上传列表小图片， 单文件上传
+            $model->file = UploadedFile::getInstance($model, 'file');
+            if(!empty($model->file))
+            {
+                $targetFileId = date("YmdHis").'-'.uniqid();
+                $ext = pathinfo($model->file->name, PATHINFO_EXTENSION);
+                $targetFileName = "{$targetFileId}.{$ext}";
+                $targetFile = Yii::getAlias('@webroot') . DIRECTORY_SEPARATOR . "uploads" . DIRECTORY_SEPARATOR . $targetFileName;
+
+                $targetFileUrl = Yii::getAlias('@web') . "/" . "uploads" . "/" . $targetFileName;
+
+                $model->file->saveAs($targetFile);
+
+                $model->form_img_url = $targetFileUrl;
+            }
+
             $model->user_id = Yii::$app->user->id;
             $model->uid = uniqid();
             $model->save(false);
+
             //return $this->redirect(['view', 'id' => $model->id]);
             return $this->redirect(['index']);
         } else {
@@ -89,7 +114,26 @@ class PformController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) ) {
+
+            //上传列表小图片， 单文件上传
+            $model->file = UploadedFile::getInstance($model, 'file');
+            if(!empty($model->file))
+            {
+                $targetFileId = date("YmdHis").'-'.uniqid();
+                $ext = pathinfo($model->file->name, PATHINFO_EXTENSION);
+                $targetFileName = "{$targetFileId}.{$ext}";
+                $targetFile = Yii::getAlias('@webroot') . DIRECTORY_SEPARATOR . "uploads" . DIRECTORY_SEPARATOR . $targetFileName;
+
+                $targetFileUrl = Yii::getAlias('@web') . "/" . "uploads" . "/" . $targetFileName;
+
+                $model->file->saveAs($targetFile);
+
+                $model->form_img_url = $targetFileUrl;
+            }
+
+            $model->save(false);
+
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -110,6 +154,18 @@ class PformController extends Controller
 
         return $this->redirect(['index']);
     }
+
+
+    
+
+    public function actionDelformfield($view_id, $formfield_id)
+    {
+        //$this->findModel($id)->delete();
+        PformField::findOne(['id' => $formfield_id])->delete();
+
+        return $this->redirect(['view', 'id' => $view_id]);
+    }
+
 
     /**
      * Finds the Pform model based on its primary key value.

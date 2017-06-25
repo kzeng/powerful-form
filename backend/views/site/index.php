@@ -8,15 +8,16 @@ $this->title = '超级表单';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>欢迎!</h1>
+        <h2>人人可用的在线表单工具</h2>
 
-        <p class="lead">欢迎使用超级表单.</p>
-
+        <p class="lead">超级表单帮你收集和管理日常工作中的数据，把几小时的工作节约至零。</p>
+        <br>
         <p>
-            <?= Html::a('现在就去创建一个表单，So easy！', ['pform/index'], ['class' => 'btn btn-lg btn-success']) ?>
+            <?= Html::a("免费使用 <span class='glyphicon glyphicon-cog'></span>", ['pform/index'], ['class' => 'btn btn-lg btn-success']) ?>
+                &nbsp;&nbsp;
+            <?= Html::a("查看数据 <span class='glyphicon glyphicon-eye-open'></span>", ['customer-pform/index'], ['class' => 'btn btn-lg btn-primary']) ?>
         </p>
 
-         
     </div>
 
     <div class="body-content">

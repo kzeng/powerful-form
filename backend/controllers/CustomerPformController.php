@@ -63,6 +63,7 @@ class CustomerPformController extends Controller
      */
     public function actionCreate()
     {
+        $this->layout = 'myform';
         $model = new CustomerPform();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

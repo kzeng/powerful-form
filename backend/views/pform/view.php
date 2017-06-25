@@ -43,16 +43,23 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'uid',
             'title',
+            'description',
+            [
+               'attribute' => 'detail',
+               'format'=> 'html',
+            ],
+
             [
                 'label' => '包含字段',
                 'value' => $model->getFormField($model),
                 'format'=> 'html',
             ],
 
+
             'created_at:datetime',
             'updated_at:datetime',
             'user_id',
-            'description',
+
         ],
     ]) ?>
 
@@ -102,9 +109,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="help-block"></div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group field_value">
                     <label class="control-label" for="field_value">字段取值范围</label>
-                    <input type="text" id="field_value" class="form-control" name="field_value" maxlength="255">
+                    <input type="text" id="field_value" class="form-control" name="field_value" maxlength="255" placeholder="选项内容用空格分开，如喜欢的水果：西瓜 苹果 葡萄">
                     <div class="help-block"></div>
                 </div>
 
@@ -114,7 +121,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="help-block"></div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group hide">
                     <label class="control-label" for="field_order">排序</label>
                     <input type="text" id="field_order" class="form-control" name="field_order" maxlength="32">
                     <div class="help-block"></div>
@@ -130,6 +137,8 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 <script type="text/javascript">
+    $('.field_value').hide();
+
     var form_uid;
     var field_title;
     var field_type;
@@ -166,7 +175,6 @@ $this->params['breadcrumbs'][] = $this->title;
     }
 
     $('#addMetadata').click (function () {
-
         form_uid = $('#form_uid').val();
         field_title = $('#field_title').val();
         field_type = $('#field_type').val();
@@ -179,6 +187,13 @@ $this->params['breadcrumbs'][] = $this->title;
         addMetadataAjax();
     });
 
+
+    $('#field_type').change (function () {
+        if($('#field_type').val() > 3)
+            $('.field_value').show();
+        else
+            $('.field_value').hide();
+    });
 
 
 </script>
