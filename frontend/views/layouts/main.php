@@ -21,6 +21,15 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+
+    <style type="text/css">
+        .footer {
+            height: 60px;
+            background-color: #f5f5f5;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+    </style>
 </head>
 <body>
 <?php $this->beginBody() ?>
