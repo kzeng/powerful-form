@@ -40,9 +40,7 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => '首页', 'url' => ['/site/index']],
-        ['label' => '前端展示', 'url' => ['http://pf.mitoto.cn']],
-        
+        ['label' => '首页', 'url' => ['/site/index']],        
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
