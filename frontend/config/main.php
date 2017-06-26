@@ -14,6 +14,8 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
+              'class' => 'commoncomponentsRequest',
+            'web'=> '/frontend/web'
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -44,24 +46,12 @@ return [
             ],
         ],
         */
-        'request'=>[
-  'class' => 'commoncomponentsRequest',
-  'web'=> '/frontend/web'
-],
+
 'urlManager' => [
     'enablePrettyUrl' => true,
     'showScriptName' => false,
 ],
-// backend, under components array
-'request'=>[
-  'class' => 'commoncomponentsRequest',
-  'web'=> '/backend/web',
-  'adminUrl' => '/admin'
-],
-'urlManager' => [
-    'enablePrettyUrl' => true,
-    'showScriptName' => false,
-], 
+
     ],
     'params' => $params,
 ];
