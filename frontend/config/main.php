@@ -14,8 +14,6 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
- 
-            'web'=> '/frontend/web',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -47,10 +45,10 @@ return [
         ],
         */
 
-'urlManager' => [
-    'enablePrettyUrl' => true,
-    'showScriptName' => false,
-],
+        'urlManager' => [
+            'showScriptName' => false,
+            'enablePrettyUrl' => true,
+        ],
 
     ],
     'params' => $params,
