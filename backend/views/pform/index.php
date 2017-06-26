@@ -60,7 +60,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value'=>function ($model, $key, $index, $column) {
                     //$url = "/customer-pform/create?pform_uid=".$model->uid;
 
-                    return Html::a('预览', ['customer-pform/create', 'pform_uid' =>$model->uid]);
+                    //return Html::a('预览', ['customer-pform/create', 'pform_uid' =>$model->uid]);
+                    //http://pf.mitoto.cn/customer-pform/create?pform_uid=594e763b8a4a4
+                    //链接到前端视图， 暂时硬编码。
+                    return "<a href=http://pf.mitoto.cn/customer-pform/create?pform_uid=".$model->uid.">预览</a>";
                 },
 
                 //'headerOptions' => array('style'=>'width:70px;'),
