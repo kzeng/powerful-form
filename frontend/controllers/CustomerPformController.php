@@ -63,6 +63,7 @@ class CustomerPformController extends Controller
      */
     public function actionCreate()
     {
+        $this->layout = 'myform';
         $model = new CustomerPform();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -71,7 +72,7 @@ class CustomerPformController extends Controller
             return $this->render('create', [
                 'model' => $model,
             ]);
-        }
+        }        
     }
 
     /**
