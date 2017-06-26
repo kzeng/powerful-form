@@ -5,10 +5,10 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\CustomerPform */
+/* @var $model backend\models\CustomerPform */
 /* @var $form yii\widgets\ActiveForm */
 
-$pform_fields = frontend\models\PformField::find()
+$pform_fields = backend\models\PformField::find()
 				->where(['pform_uid' => $pform->uid])
 				->orderBy(['id' => SORT_ASC])
 				->all();
@@ -57,7 +57,7 @@ $pform_fields = frontend\models\PformField::find()
 		
 	    function addCustomerFormData() {
 	        var args = {
-	            'classname': '\\frontend\\models\\Pform',
+	            'classname': '\\backend\\models\\Pform',
 	            'funcname': 'addCustomerFormData',
 	            'params': {
 	                'form_uid': pform_uid,
