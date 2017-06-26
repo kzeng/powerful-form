@@ -34,7 +34,7 @@ class SiteController extends Controller
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout', 'ajax-broker'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
