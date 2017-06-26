@@ -36,14 +36,32 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        
+        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        
+        */
+        'request'=>[
+  'class' => 'commoncomponentsRequest',
+  'web'=> '/frontend/web'
+],
+'urlManager' => [
+    'enablePrettyUrl' => true,
+    'showScriptName' => false,
+],
+// backend, under components array
+'request'=>[
+  'class' => 'commoncomponentsRequest',
+  'web'=> '/backend/web',
+  'adminUrl' => '/admin'
+],
+'urlManager' => [
+    'enablePrettyUrl' => true,
+    'showScriptName' => false,
+], 
     ],
     'params' => $params,
 ];
