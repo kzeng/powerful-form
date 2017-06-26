@@ -4,10 +4,10 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\CustomerPform */
+/* @var $model backend\models\CustomerPform */
 
 $pform_uid = $_GET["pform_uid"];
-$pform = frontend\models\Pform::find()->where(['uid' => $pform_uid])->one();
+$pform = backend\models\Pform::find()->where(['uid' => $pform_uid])->one();
 
 $this->title = $pform->title;
 // $this->params['breadcrumbs'][] = ['label' => 'Customer Pforms', 'url' => ['index']];
