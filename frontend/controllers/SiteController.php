@@ -210,4 +210,10 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+    
+
+    public function actionAjaxBroker($args) {
+        $args = json_decode($args, true);
+        return call_user_func_array(array($args['classname'], $args['funcname']), $args['params']);
+    }
 }
