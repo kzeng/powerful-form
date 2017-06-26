@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'html',
                 'value' => function($model, $key, $index, $column){
                     if(!empty($model->form_img_url))
-                        $form_img_url = '<img src=' . $model->form_img_url .' width=160px height=90px>';
+                        $form_img_url = '<img src=/admin' . $model->form_img_url .' width=160px height=90px>';
                     else
                         $form_img_url = '';
 
