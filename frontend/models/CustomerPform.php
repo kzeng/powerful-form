@@ -44,7 +44,7 @@ class CustomerPform extends \yii\db\ActiveRecord
             'id' => 'ID',
             'pform_uid' => 'Pform Uid',
             'pform_field_id' => 'Pform Field ID',
-            'value' => 'Value',
+            'value' => '字段内容',
         ];
     }
 }
