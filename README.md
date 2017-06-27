@@ -114,5 +114,6 @@
 8. 表单页底部增加企业名称，口号等信息。高级版本支持！
 9. 内置典型行业模板表单，一键选用。高级版本支持！
 10. 表单提交成功后的结束页面。
-11. 前端首页再设计。（jQuery全屏滚动插件fullPage.js 演示：http://www.dowebok.com/demo/2014/77/）
+11. 前端首页再设计.https://github.com/alvarotrigo/fullPage.js
+（全屏滚动插件演示：http://www.dowebok.com/demo/2014/77/）
 12. 增加手机预览功能，二维码。
