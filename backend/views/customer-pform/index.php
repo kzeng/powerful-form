@@ -32,6 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
             //'pform_uid',
             [
                 'attribute' => 'pform_uid',
+                'label' => '表单编码',
+            ], 
+
+            [
                 'label' => '表单名称',
 
                 'format' => 'html',
