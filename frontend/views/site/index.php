@@ -9,43 +9,6 @@ $this->title = '超级表单';
 
 
 <div id="dowebok">
-
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => '超级表单',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => '首页', 'url' => ['/site/index']],
-        // ['label' => 'About', 'url' => ['/site/about']],
-        // ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                '退出 (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
-</div>
-
-
     <div class="section section1">
         
         <div class="jumbotron">
@@ -57,6 +20,8 @@ $this->title = '超级表单';
             <p>
                 <a href="http://pf.mitoto.cn/admin" class="btn btn-lg btn-success">现在就去免费创建一个表单</a>
             </p>
+
+
         </div>
     </div>
     <div class="section section2"></div>
