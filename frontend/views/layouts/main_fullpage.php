@@ -35,10 +35,9 @@ AppAsset::register($this);
             border-color: #337ab7;
 
             .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-            color: #fff;
-            background-color: #337ab7;
+                color: #fff;
+                background-color: #337ab7;
             }
-        }
 
         .btn-success {
             color: #f5f5f5;
