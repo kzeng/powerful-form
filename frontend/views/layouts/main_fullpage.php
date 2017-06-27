@@ -33,6 +33,7 @@ AppAsset::register($this);
         .navbar-inverse {
             background-color: rgba(255, 255, 255, .15);
             border-color: #337ab7;
+        }
 
             .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
                 color: #fff;
