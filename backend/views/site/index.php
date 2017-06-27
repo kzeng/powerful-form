@@ -8,9 +8,10 @@ $this->title = '超级表单';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h2>人人可用的在线表单工具</h2>
+        <h2>超级表单</h2>
 
-        <p class="lead">超级表单帮你收集和管理日常工作中的数据，把几小时的工作节约至零。</p>
+        <p class="lead" style="color:#999">帮你轻松收集和管理客户数据</p>
+
         <br>
         <p>
             <a href="http://pf.mitoto.cn" class="btn btn-success">官网首页 <span class='glyphicon glyphicon-globe'></span></a>
