@@ -30,21 +30,29 @@ AppAsset::register($this);
 /*        .section3 { background: url(https://git.oschina.net/uploads/images/2017/0627/150056_dcccca71_537766.jpeg) 50%;}
         .section4 { background: url(https://git.oschina.net/uploads/images/2017/0627/150320_043a3b19_537766.jpeg) 50%;}*/
 
-        .navbar-inverse {
-            background-color: rgba(255, 255, 255, .15);
-            border-color: #337ab7;
-        }
+            .navbar-inverse {
+                background-color: rgba(255, 255, 255, .15);
+                border-color: #337ab7;
+            }
 
             .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
                 color: #fff;
                 background-color: #337ab7;
             }
 
-        .btn-success {
+            .navbar-inverse .navbar-toggle .icon-bar {
+                background-color: #c6e0f7;
+            }
+
+            .navbar-inverse .navbar-toggle {
+                border-color: #c6e0f7;
+            }
+
+            .btn-success {
             color: #f5f5f5;
             background-color: rgba(255, 255, 255, .15);
             border-color: #f5f5f5;
-        }
+            }
     </style>
 
 
