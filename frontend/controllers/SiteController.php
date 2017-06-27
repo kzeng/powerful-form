@@ -72,6 +72,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->layout = "main_fullpage";
         return $this->render('index');
     }
 
