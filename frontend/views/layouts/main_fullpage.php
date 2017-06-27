@@ -69,13 +69,12 @@ AppAsset::register($this);
     ]);
     NavBar::end();
     ?>
+     <?= $content ?>
 </div>
 
-    <div class="container">
-        <?= $content ?>
-    </div>
 
-    
+
+
 <?php $this->endBody() ?>
 </body>
 </html>
