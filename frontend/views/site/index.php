@@ -29,4 +29,9 @@ $this->title = '超级表单';
     <div class="section section4"></div>
 </div>
 
+<script>
+$(function(){
+    $('#dowebok').fullpage();
+});
+</script>
 
