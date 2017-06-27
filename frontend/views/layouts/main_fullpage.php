@@ -26,9 +26,25 @@ AppAsset::register($this);
 
     <style>
         .section1 { background: url(http://idowebok.u.qiniudn.com/77/1.jpg) 50%;}
-        .section2 { background: url(http://idowebok.u.qiniudn.com/77/2.jpg) 50%;}
+        /*.section2 { background: url(http://idowebok.u.qiniudn.com/77/2.jpg) 50%;}*/
         .section3 { background: url(http://idowebok.u.qiniudn.com/77/3.jpg) 50%;}
         .section4 { background: url(http://idowebok.u.qiniudn.com/77/4.jpg) 50%;}
+
+        .navbar-inverse {
+            background-color: rgba(255, 255, 255, .15);
+            border-color: #337ab7;
+
+            .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+            color: #fff;
+            background-color: #337ab7;
+            }
+        }
+
+        .btn-success {
+            color: #f5f5f5;
+            background-color: rgba(255, 255, 255, .15);
+            border-color: #f5f5f5;
+        }
     </style>
 
 

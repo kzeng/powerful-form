@@ -6,8 +6,6 @@ use yii\helpers\Html;
 $this->title = '超级表单';
 ?>
 
-
-
 <div id="dowebok">
     <div class="section section1">
         
@@ -24,7 +22,7 @@ $this->title = '超级表单';
 
         </div>
     </div>
-    <div class="section section2"></div>
+<!--     <div class="section section2"></div> -->
     <div class="section section3"></div>
     <div class="section section4"></div>
 </div>
