@@ -13,7 +13,7 @@ $this->title = '超级表单';
 
             <h2>超级表单</h2>
 
-            <p class="lead" style="color:#999">帮你轻松收集和管理客户数据。</p>
+            <p class="lead" style="color:#999">帮你轻松收集和管理客户数据</p>
 
             <p>
                 <a href="http://pf.mitoto.cn/admin" class="btn btn-lg btn-success">现在就去免费创建一个表单</a>
