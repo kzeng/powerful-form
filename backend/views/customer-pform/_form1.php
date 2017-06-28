@@ -46,8 +46,10 @@ $pform_fields = backend\models\PformField::find()
 <?php } ?>
 
 <br><br><br>
+<small class='center-block text-center'>
+<a href="http://<?= $_SERVER['HTTP_HOST'] ?>">&copy;超级表单 <?= date('Y') ?></a>
+</small>
 
-<small class='center-block text-center'><a href="http://<?= $_SERVER['HTTP_HOST'] ?>">&copy; 超级表单 <?= date('Y') ?></a></small>
 </div>
 
 <script type="text/javascript">
