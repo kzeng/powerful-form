@@ -17,10 +17,13 @@ $this->title = '超级表单';
             <?= Html::a("官网首页 <span class='glyphicon glyphicon-globe'></span>", 'http://'.$_SERVER['HTTP_HOST'], ['class' => 'btn btn-lg btn-default']) ?>
                  &nbsp;&nbsp;
             <?= Html::a("免费使用 <span class='glyphicon glyphicon-cog'></span>", ['pform/index'], ['class' => 'btn btn-lg btn-default']) ?>
+
+            <!--
                 &nbsp;&nbsp;
-            <?= Html::a("查看数据 <span class='glyphicon glyphicon-equalizer'></span>", ['customer-pform/index'], ['class' => 'btn btn-lg btn-default']) ?>
+            <//?= Html::a("查看数据 <span class='glyphicon glyphicon-equalizer'></span>", ['customer-pform/index'], ['class' => 'btn btn-lg btn-default']) ?>
                 &nbsp;&nbsp;
-            <?= Html::a("数据统计 <span class='glyphicon glyphicon-stats'></span>", ['pform/statistics'], ['class' => 'btn btn-lg btn-default']) ?>
+            <//?= Html::a("数据统计 <span class='glyphicon glyphicon-stats'></span>", ['pform/statistics'], ['class' => 'btn btn-lg btn-default']) ?>
+            -->
         </p>
 
     </div>

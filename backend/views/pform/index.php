@@ -105,6 +105,19 @@ $this->params['breadcrumbs'][] = $this->title;
             //     'headerOptions' => array('style'=>'width:12%;'),
             // ],
 
-        ],
+            ],
+
+            [
+                'class' => 'yii\grid\ActionColumn', 
+                 'label' => '填表数据',
+                'template' => '{list}',
+                'headerOptions' => array('style'=>'width:12%;'),
+                'buttons' => [
+                    'list' => function ($url, $model, $key) {
+                        return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', ['customer-pform/statistics', 'uid' => $model->uid]);
+                    },
+                ],
+            ],
+
     ]); ?>
 </div>
