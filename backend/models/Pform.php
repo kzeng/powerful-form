@@ -105,7 +105,7 @@ class Pform extends \yii\db\ActiveRecord
     }
 
     public static function addCustomerFormData($form_uid, $myformfield_id, $myformfield) {
-
+        $uniqid = uniqid();
         $myformfield_arr = explode('<====>', $myformfield);
         $myformfield_id_arr = explode('<====>', $myformfield_id);
 
@@ -117,6 +117,7 @@ class Pform extends \yii\db\ActiveRecord
             $cp->pform_uid = $form_uid;
             $cp->pform_field_id = $pform_field_id;
             $cp->value = $value;
+            $cp->customer_pform_uid = $uniqid;
 
             $cp->save(false);
          }
@@ -125,23 +126,21 @@ class Pform extends \yii\db\ActiveRecord
     }
 
 
-    static function getFormField($model)
-    {
+    static function getFormField($model) {
         $formfields = \backend\models\PformField::find()
-                        ->where(["pform_uid" => $model->uid])
-                        ->all();
+            ->where(["pform_uid" => $model->uid])
+            ->all();
 
         $field_str = "";
         if(empty($formfields))
             return $field_str;
 
         foreach ($formfields as $formfield) {
-
             $field_str = $field_str.  Html::a('删除', ['delformfield', 'view_id' => $model->id, 'formfield_id' => $formfield->id], ['class' => 'btn btn-danger btn-xs']) . "【".$formfield->title."】<br>";
         }
         return "<span style='color:blue; font-size:14pt'>".$field_str."</span>";
     }
+    // static function getStatistic() {
 
-
-
+    // }
 }

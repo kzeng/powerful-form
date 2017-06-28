@@ -46,7 +46,16 @@ class CustomerPformController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    public function actionStatistics()
+    {
+        $searchModel = new CustomerPformSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        return $this->render('statistics', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
     /**
      * Displays a single CustomerPform model.
      * @param integer $id

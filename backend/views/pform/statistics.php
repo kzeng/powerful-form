@@ -1,36 +1,20 @@
 <?php
-
 use yii\helpers\Html;
 use yii\grid\GridView;
 
-/* @var $this yii\web\View */
-/* @var $searchModel backend\models\PformSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
-
-$this->title = '用户表单';
+$this->title = '表单统计';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pform-index">
-
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('创建表单', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            //['class' => 'yii\grid\SerialColumn'],
-
             [
                 'attribute' => 'id',
                 'headerOptions' => array('style'=>'width:8%;'),
-            ], 
-            //'form_img_url',
-
-            [
+            ], [
                 'attribute' => 'form_img_url',
                 'format' => 'html',
                 'value' => function($model, $key, $index, $column){
@@ -42,34 +26,26 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $form_img_url;
                 },
                 'headerOptions' => array('style'=>'width:160px;'),
-            ],
-
-            //'uid',
-            'title',
-
-           //'description',
-
-            // [
-            //     'attribute' => 'detail',
-            //     'format' => 'html',
-            // ],
-
-            [
-                'label' => '表单预览',
+            ], 'title', [
+                'label' => '填单人数',
                 'format' => 'html',
-                'value'=>function ($model, $key, $index, $column) {
-                    //$url = "/customer-pform/create?pform_uid=".$model->uid;
-
-                    //return Html::a('预览', ['customer-pform/create', 'pform_uid' =>$model->uid]);
-                    //http://pf.beesoft.com/customer-pform/create?pform_uid=594e763b8a4a4
-                    //链接到前端视图， 暂时硬编码。
-                    return Html::a("预览", ['customer-pform/create', 'pform_uid' => $model->uid]);
+                'value' => function ($model, $key, $index, $column) {
+                    // $customerform_count = \backend\models\CustomerPform::find()
+                    //     ->where(["pform_uid" => $model->uid])
+                    //     ->count();
+                    // $formfield_count = \backend\models\PformField::find()
+                    //     ->where(["pform_uid" => $model->uid])
+                    //     ->count();
+                    // return $customerform_count/$formfield_count;
+                    
+                    $customerform_count = \backend\models\CustomerPform::find()
+                        ->select(['customer_pform_uid'])
+                        ->where(["pform_uid" => $model->uid])
+                        ->distinct()
+                        ->count();
+                    return $customerform_count;
                 },
-
-                //'headerOptions' => array('style'=>'width:70px;'),
-            ],
-
-            [
+            ], [
                 'label' => '包含字段',
                 'value'=>function ($model, $key, $index, $column) {
 
@@ -89,21 +65,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'html',
                 //'filter' => \common\models\CampaignOrder::getGhOption(),
                 'headerOptions' => array('style'=>'width:25%;'),
+            ], [
+                'class' => 'yii\grid\ActionColumn', 
+                'template' => '{list}',
+                'headerOptions' => array('style'=>'width:12%;'),
+                'buttons' => [
+                    'list' => function ($url, $model, $key) {
+                        return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', ['customer-pform/statistics', 'uid' => $model->uid]);
+                    },
+                ],
             ],
-
-            // 'created_at:datetime',
-            // 'updated_at:datetime',
-            // 'user_id',
-            // 'description',
-            //http://127.0.0.1/adv/backend/web/index.php?PformFieldSearch%5Bpform_uid%5D=594cd9feac29c&r=pform-field
-            
-            ['class' => 'yii\grid\ActionColumn'],
-            // [
-            //     'class' => 'yii\grid\ActionColumn', 
-            //     'template' => '{update}   {delete}',
-            //     'headerOptions' => array('style'=>'width:12%;'),
-            // ],
-
         ],
     ]); ?>
 </div>

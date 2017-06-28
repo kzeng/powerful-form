@@ -51,6 +51,16 @@ class PformController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    public function actionStatistics()
+    {
+        $searchModel = new PformSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('statistics', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
 
     /**
      * Displays a single Pform model.
