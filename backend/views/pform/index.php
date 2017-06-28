@@ -109,17 +109,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'class' => 'yii\grid\ActionColumn', 
-                 'label' => '填表数据',
-                'template' => '{list}',
+                 // 'label' => '填表数据',
+                'template' => '{view} {update} {delete} {list}',
                 'headerOptions' => array('style'=>'width:12%;'),
                 'buttons' => [
                     'list' => function ($url, $model, $key) {
-
-                        
-                        return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', ['customer-pform/statistics', 'uid' => $model->uid]);
+                        return Html::a('<span class="glyphicon glyphicon-stats"></span>', ['customer-pform/statistics', 'uid' => $model->uid]);
                     },
                 ],
             ],
-
+        ],
     ]); ?>
 </div>
