@@ -150,7 +150,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <!-- 二维码模式窗口 for mobile -->
 <div class="modal fade"  id="myModal1">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -180,7 +180,7 @@ $this->params['breadcrumbs'][] = $this->title;
             var form_link_attr = $(this).attr("form_link_attr");
 
             //<img src="http://qr.liantu.com/api.php?text=http://pf.mitoto.cn/customer-pform/create?pform_uid=594cd9feac29c"/>
-            var preview = "<img src='http://qr.liantu.com/api.php?text=" + form_link_attr +  "' />";
+            var preview = "<img width=100% src='http://qr.liantu.com/api.php?text=" + form_link_attr +  "' />";
 
             $("#preview").html(preview);
         });
