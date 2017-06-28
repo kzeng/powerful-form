@@ -68,8 +68,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     //return "<a href=". Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid.">预览</a>";
 
                     $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
+                    $form_title = $model->title;
 
-                    return "<button class='btn btn-default btn-form-link' data-toggle='modal' data-target='#myModal1' form_link_attr='".$form_link."'><i class='glyphicon glyphicon-link'></i> 预览</button>";
+                    return "<button class='btn btn-default btn-form-link' data-toggle='modal' data-target='#myModal1' form_title_attr='".$form_title."' form_link_attr='".$form_link."'><i class='glyphicon glyphicon-link'></i> 预览</button>";
                 },
 
                 //'headerOptions' => array('style'=>'width:70px;'),
@@ -157,10 +158,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h3 class="modal-title">预览表单</h3>
             </div>
             <div class="modal-body">
-                <h4 class="modal-title">手机扫一扫</h4>
+                <h4 class="modal-title" id="form_title"></h4>
 
                 <div class="alert alert-success" role="alert" id="preview"</div>
-
+                <p class="center-block text-center">手机扫一扫</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -178,11 +179,13 @@ $this->params['breadcrumbs'][] = $this->title;
         $(".btn-form-link").click(function(){
 
             var form_link_attr = $(this).attr("form_link_attr");
-
+            var form_title = $(this).attr("form_title_attr");
+            
             //<img src="http://qr.liantu.com/api.php?text=http://pf.mitoto.cn/customer-pform/create?pform_uid=594cd9feac29c"/>
             var preview = "<img width=100% src='http://qr.liantu.com/api.php?text=" + form_link_attr +  "' />";
 
             $("#preview").html(preview);
+            $("#form_title").html(form_title);
         });
 
     });//end of documnet ready
