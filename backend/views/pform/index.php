@@ -147,3 +147,43 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 </div>
+
+<!-- 二维码模式窗口 for mobile -->
+<div class="modal fade"  id="myModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">预览表单</h3>
+            </div>
+            <div class="modal-body">
+                <h4 class="modal-title">手机扫一扫</h4>
+
+                <div class="alert alert-success" role="alert" id="preview"</div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-success" id="addMetadata">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        $(".btn-form-link").click(function(){
+
+            var form_link_attr = $(this).attr("form_link_attr");
+
+            //<img src="http://qr.liantu.com/api.php?text=http://pf.mitoto.cn/customer-pform/create?pform_uid=594cd9feac29c"/>
+            var preview = "<img src='http://qr.liantu.com/api.php?text=" + form_link_attr +  "' />";
+
+            $("#preview").html(preview);
+        });
+
+    });//end of documnet ready
+
+</script>
