@@ -57,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'label' => '表单预览',
-                'format' => 'html',
+                'format' => 'raw',
                 'value'=>function ($model, $key, $index, $column) {
                     //$url = "/customer-pform/create?pform_uid=".$model->uid;
 
