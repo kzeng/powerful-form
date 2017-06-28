@@ -108,6 +108,27 @@ $this->params['breadcrumbs'][] = $this->title;
 
             // ],
 
+                [
+                    'label' => '填单人数',
+                    'format' => 'html',
+                    'value' => function ($model, $key, $index, $column) {
+                        // $customerform_count = \backend\models\CustomerPform::find()
+                        //     ->where(["pform_uid" => $model->uid])
+                        //     ->count();
+                        // $formfield_count = \backend\models\PformField::find()
+                        //     ->where(["pform_uid" => $model->uid])
+                        //     ->count();
+                        // return $customerform_count/$formfield_count;
+                        
+                        $customerform_count = \backend\models\CustomerPform::find()
+                            ->select(['customer_pform_uid'])
+                            ->where(["pform_uid" => $model->uid])
+                            ->distinct()
+                            ->count();
+                        return $customerform_count;
+                    },
+                ],
+
             [
                 'class' => 'yii\grid\ActionColumn', 
                  // 'label' => '填表数据',
