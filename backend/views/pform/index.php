@@ -166,8 +166,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                 <button type="button" class="btn btn-success" id="addMetadata">确定</button>
             </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
 </div>
 
 <script type="text/javascript">
