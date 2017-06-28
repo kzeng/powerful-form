@@ -158,9 +158,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h3 class="modal-title">预览表单</h3>
             </div>
             <div class="modal-body">
-                <span>
-                <h4 class="modal-title" id="form_title"></h4><small>手机扫一扫</small>
-                </span>
+                <h4 class="modal-title" id="form_title"></h4>
                 <div class="alert alert-success" role="alert" id="preview"</div>
                 
             </div>
@@ -183,7 +181,7 @@ $this->params['breadcrumbs'][] = $this->title;
             var form_title = $(this).attr("form_title_attr");
             
             //<img src="http://qr.liantu.com/api.php?text=http://pf.mitoto.cn/customer-pform/create?pform_uid=594cd9feac29c"/>
-            var preview = "<img width=100% src='http://qr.liantu.com/api.php?text=" + form_link_attr +  "' />";
+            var preview = "<img width=100% src='http://qr.liantu.com/api.php?text=" + form_link_attr +  "' /> <small class='center-block text-center'>手机扫一扫</small>";
 
             $("#preview").html(preview);
             $("#form_title").html(form_title);
