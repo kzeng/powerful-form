@@ -158,7 +158,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h3 class="modal-title">预览表单</h3>
             </div>
             <div class="modal-body">
-                <h4 class="modal-title" id="form_title"><small>手机扫一扫</small></h4>
+                <h4 class="modal-title" id="form_title"></h4>
+                <small>手机扫一扫</small>
                 <div class="alert alert-success" role="alert" id="preview"</div>
                 
             </div>
