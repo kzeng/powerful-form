@@ -65,7 +65,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     //http://pf.beesoft.com/customer-pform/create?pform_uid=594e763b8a4a4
                     //链接到前端视图， 暂时硬编码。
 
-                    return "<a href=". Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid.">预览</a>";
+                    //return "<a href=". Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid.">预览</a>";
+
+                    $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
+
+                    return "<button class='btn btn-default btn-form-link' data-toggle='modal' data-target='#myModal1' form_link_attr='".$form_link."'><i class='glyphicon glyphicon-link'></i> 预览</button>";
                 },
 
                 //'headerOptions' => array('style'=>'width:70px;'),
