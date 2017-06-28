@@ -98,14 +98,14 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'description',
             //http://127.0.0.1/adv/backend/web/index.php?PformFieldSearch%5Bpform_uid%5D=594cd9feac29c&r=pform-field
             
-            ['class' => 'yii\grid\ActionColumn'],
-            // [
-            //     'class' => 'yii\grid\ActionColumn', 
-            //     'template' => '{update}   {delete}',
-            //     'headerOptions' => array('style'=>'width:12%;'),
-            // ],
+            // ['class' => 'yii\grid\ActionColumn'],
+            // // [
+            // //     'class' => 'yii\grid\ActionColumn', 
+            // //     'template' => '{update}   {delete}',
+            // //     'headerOptions' => array('style'=>'width:12%;'),
+            // // ],
 
-            ],
+            // ],
 
             [
                 'class' => 'yii\grid\ActionColumn', 
@@ -114,6 +114,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'headerOptions' => array('style'=>'width:12%;'),
                 'buttons' => [
                     'list' => function ($url, $model, $key) {
+
+                        
                         return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', ['customer-pform/statistics', 'uid' => $model->uid]);
                     },
                 ],
