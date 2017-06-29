@@ -180,7 +180,6 @@ $this->params['breadcrumbs'][] = $this->title;
             var form_link_attr = $(this).attr("form_link_attr");
             var form_title = $(this).attr("form_title_attr");
             
-            //<img src="http://qr.liantu.com/api.php?text=http://pf.mitoto.cn/customer-pform/create?pform_uid=594cd9feac29c"/>
             var preview = "<img width=100% src='http://qr.liantu.com/api.php?text=" + form_link_attr +  "' /> <small class='center-block text-center'>手机扫一扫</small>";
 
             $("#preview").html(preview);
