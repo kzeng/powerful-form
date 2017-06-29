@@ -117,3 +117,4 @@
 11. 前端首页再设计.https://github.com/alvarotrigo/fullPage.js
 （全屏滚动插件演示：http://www.dowebok.com/demo/2014/77/）
 12. 增加手机预览功能，二维码。
+13. 后续将支持收集数据的类型：单选、多选、图片
