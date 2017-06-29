@@ -4,6 +4,13 @@
 use yii\helpers\Html;
 
 $this->title = '超级表单';
+
+$slogan = [
+    "帮你轻松收集和管理客户数据",
+    "高效 简单 灵活 人人可用",
+    "真诚的倾听您的需求",
+];
+
 ?>
 
 <div id="dowebok">
@@ -13,7 +20,7 @@ $this->title = '超级表单';
 
             <h2>超级表单</h2>
 
-            <p class="lead" style="color:#999">帮你轻松收集和管理客户数据</p>
+            <p class="lead" style="color:#999"><?= $slogan[rand(0,sizeof($slogan)-1)] ?></p>
 
             <p>
                 <!--
