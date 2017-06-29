@@ -100,7 +100,7 @@
   
 
 ##数据库
-暂时不提供用migate迁徙数据表, 直接导入SQL文件 /backend/models/db.sql  包含表结构和部分演示数据。
+暂时不提供用migate迁徙数据表, 直接导入SQL文件 /backend/models/db.sql  包含所以表结构。
 
 
 ##基本功能
