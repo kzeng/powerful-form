@@ -100,7 +100,12 @@
   
 
 ##数据库
-暂时不提供用migate迁徙数据表, 直接导入SQL文件 /backend/models/db.sql  包含所以表结构。
+使用migrate迁移数据表，命令如下：
+
+```
+yii migrate 
+yii migrate --migrationPath=backend/migrations/
+```
 
 
 ##基本功能
