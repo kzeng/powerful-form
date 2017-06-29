@@ -30,7 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="form-group">
                     <?= Html::submitButton('登录', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                     &nbsp;&nbsp;
-                    <?= Html::a("还没有帐号，现在免费注册！", ['site/signup']) ?>
+                    <!--
+                    <//?= Html::a("还没有帐号，现在免费注册！", ['site/signup']) ?>
+                    -->
+
+                    <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/site/signup">还没有帐号，现在免费注册！</a>
                 </div>
 
                 
