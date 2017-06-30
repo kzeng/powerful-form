@@ -16,7 +16,6 @@ return [
     'modules' => [
         'redactor' => [
             'class' => 'yii\redactor\RedactorModule',
-            'basePath' => '@web'
             'uploadDir' => '@webroot/uploads',
             'uploadUrl' => '@web/uploads',
             'imageAllowExtensions'=>['jpg','png','gif']
