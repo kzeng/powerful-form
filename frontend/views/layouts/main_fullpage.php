@@ -26,7 +26,9 @@ AppAsset::register($this);
 
 
     <style>
-        font-family:"Microsoft Yahei";
+        body{
+            font-family:"Microsoft Yahei";
+        }
         .section1 { background: url(/uploads/1.png) 50%;}
         /*.section2 { background: url(http://idowebok.u.qiniudn.com/77/2.jpg) 50%;}*/
 /*        .section3 { background: url(https://git.oschina.net/uploads/images/2017/0627/150056_dcccca71_537766.jpeg) 50%;}
