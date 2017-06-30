@@ -21,6 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'tableOptions' =>['class' => 'table table-striped'],
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
 
@@ -56,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'label' => '表单预览',
-                'format' => 'html',
+                'format' => 'raw',
                 'value'=>function ($model, $key, $index, $column) {
                     //$url = "/customer-pform/create?pform_uid=".$model->uid;
 
@@ -64,7 +65,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     //http://pf.beesoft.com/customer-pform/create?pform_uid=594e763b8a4a4
                     //链接到前端视图， 暂时硬编码。
 
-                    return "<a href=". Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid.">预览</a>";
+                    //return "<a href=". Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid.">预览</a>";
+
+                    $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
+                    $form_title = $model->title;
+
+                    return "<button class='btn btn-default btn-form-link' data-toggle='modal' data-target='#myModal1' form_title_attr='".$form_title."' form_link_attr='".$form_link."'><i class='glyphicon glyphicon-phone'></i> 预览</button>";
                 },
 
                 //'headerOptions' => array('style'=>'width:70px;'),
@@ -107,6 +113,27 @@ $this->params['breadcrumbs'][] = $this->title;
 
             // ],
 
+                [
+                    'label' => '填单人数',
+                    'format' => 'html',
+                    'value' => function ($model, $key, $index, $column) {
+                        // $customerform_count = \backend\models\CustomerPform::find()
+                        //     ->where(["pform_uid" => $model->uid])
+                        //     ->count();
+                        // $formfield_count = \backend\models\PformField::find()
+                        //     ->where(["pform_uid" => $model->uid])
+                        //     ->count();
+                        // return $customerform_count/$formfield_count;
+                        
+                        $customerform_count = \backend\models\CustomerPform::find()
+                            ->select(['customer_pform_uid'])
+                            ->where(["pform_uid" => $model->uid])
+                            ->distinct()
+                            ->count();
+                        return $customerform_count;
+                    },
+                ],
+
             [
                 'class' => 'yii\grid\ActionColumn', 
                  // 'label' => '填表数据',
@@ -121,3 +148,44 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 </div>
+
+<!-- 二维码模式窗口 for mobile -->
+<div class="modal fade"  id="myModal1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">预览表单</h3>
+            </div>
+            <div class="modal-body">
+                <h4 class="modal-title" id="form_title"></h4>
+                <div class="alert alert-success" role="alert" id="preview"</div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-success" id="addMetadata">确定</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        $(".btn-form-link").click(function(){
+
+            var form_link_attr = $(this).attr("form_link_attr");
+            var form_title = $(this).attr("form_title_attr");
+            
+            var preview = "<img width=100% src='http://qr.liantu.com/api.php?text=" + form_link_attr +  "' /> <small class='center-block text-center'>手机扫一扫</small>";
+
+            $("#preview").html(preview);
+            $("#form_title").html(form_title);
+        });
+
+    });//end of documnet ready
+
+</script>

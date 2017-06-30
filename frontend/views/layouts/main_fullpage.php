@@ -24,8 +24,12 @@ AppAsset::register($this);
     <link rel="stylesheet" href="http://cdn.dowebok.com/77/css/jquery.fullPage.css">
     <script src="http://cdn.dowebok.com/77/js/jquery.fullPage.min.js"></script>
 
+
     <style>
-        .section1 { background: url(/uploads/1.jpg) 50%;}
+        body .btn{
+            font-family:"Microsoft Yahei";
+        }
+        .section1 { background: url(/uploads/1.png) 50%;}
         /*.section2 { background: url(http://idowebok.u.qiniudn.com/77/2.jpg) 50%;}*/
 /*        .section3 { background: url(https://git.oschina.net/uploads/images/2017/0627/150056_dcccca71_537766.jpeg) 50%;}
         .section4 { background: url(https://git.oschina.net/uploads/images/2017/0627/150320_043a3b19_537766.jpeg) 50%;}*/

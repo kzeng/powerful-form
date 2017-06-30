@@ -100,7 +100,12 @@
   
 
 ##数据库
-暂时不提供用migate迁徙数据表, 直接导入SQL文件 /backend/models/db.sql  包含表结构和部分演示数据。
+使用migrate迁移数据表，命令如下：
+
+```
+yii migrate 
+yii migrate --migrationPath=backend/migrations/
+```
 
 
 ##基本功能
@@ -117,3 +122,4 @@
 11. 前端首页再设计.https://github.com/alvarotrigo/fullPage.js
 （全屏滚动插件演示：http://www.dowebok.com/demo/2014/77/）
 12. 增加手机预览功能，二维码。
+13. 后续将支持收集数据的类型：单选、多选、图片
