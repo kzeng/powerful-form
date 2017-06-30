@@ -20,7 +20,7 @@ $slogan = [
 
             <h2>超级表单</h2>
 
-            <p class="lead" style="color:#999"><?= $slogan[rand(0,sizeof($slogan)-1)] ?></p>
+            <p class="lead" style="color:#fff"><?= $slogan[rand(0,sizeof($slogan)-1)] ?></p>
 
             <p>
                 <!--
