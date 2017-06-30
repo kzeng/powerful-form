@@ -36,6 +36,10 @@ class ComposerStaticInit58fb6dec164836497bfdc3c882a815b9
             'pendalf89\\tinymce\\' => 18,
             'pendalf89\\filemanager\\' => 22,
         ),
+        'm' => 
+        array (
+            'mikehaertl\\tmp\\' => 15,
+        ),
         'k' => 
         array (
             'kartik\\tree\\' => 12,
@@ -68,6 +72,7 @@ class ComposerStaticInit58fb6dec164836497bfdc3c882a815b9
         ),
         'c' => 
         array (
+            'codemix\\excelexport\\' => 20,
             'creocoder\\nestedsets\\' => 21,
             'cebe\\markdown\\' => 14,
         ),
@@ -85,6 +90,10 @@ class ComposerStaticInit58fb6dec164836497bfdc3c882a815b9
         'yii\\redactor\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiidoc/yii2-redactor',
+        ),
+        'codemix\\excelexport\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codemix/yii2-excelexport/src',
         ),
         'yii\\jui\\' => 
         array (
@@ -129,6 +138,10 @@ class ComposerStaticInit58fb6dec164836497bfdc3c882a815b9
         'wbraganca\\dynamicform\\' => 
         array (
             0 => __DIR__ . '/..' . '/wbraganca/yii2-dynamicform/src',
+        ),
+        'mikehaertl\\tmp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mikehaertl/php-tmpfile/src',
         ),
         'pendalf89\\tinymce\\' => 
         array (
@@ -246,6 +259,13 @@ class ComposerStaticInit58fb6dec164836497bfdc3c882a815b9
             'Symfony\\Component\\CssSelector\\' => 
             array (
                 0 => __DIR__ . '/..' . '/symfony/css-selector',
+            ),
+        ),
+        'P' => 
+        array (
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
             ),
         ),
         'M' => 

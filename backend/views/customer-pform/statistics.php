@@ -2,30 +2,28 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use yii\helpers\ArrayHelper;
 
 $this->title = '客户表单数据统计';
 $this->params['breadcrumbs'][] = $this->title;
 
-$command = \Yii::$app->db->createCommand('SELECT id,title FROM pform_field where pform_uid = "' . Yii::$app->request->get('uid') .'"');
-$pformfield = $command->queryAll();
-$command = \Yii::$app->db->createCommand('SELECT * FROM customer_pform where pform_uid = "' . Yii::$app->request->get('uid') .'"');
-$customer_pform = $command->queryAll();
-$customer_pform = ArrayHelper::map($customer_pform, 'pform_field_id', 'value', 'customer_pform_uid');
+$data = \backend\models\CustomerPform::statistic();
 ?>
 <div class="customer-pform-index">
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php if ( $customer_pform ) { ?>
+    <p>
+        <?= Html::a('导出', ['exportstats', 'uid' => Yii::$app->request->get('uid')], ['class' => 'btn btn-success']) ?>
+    </p>
+    <?php if ( $data ) { ?>
         <table class='table'>
             <tr>
-                <?php foreach ( $pformfield as $key => $value ) { ?>
-                    <th><?php echo $value['title'];?></th>
+                <?php foreach ( $data['title'] as $column_title ) { ?>
+                    <th><?php echo $column_title;?></th>
                 <?php } ?>
             </tr>
-            <?php foreach ( $customer_pform as $key => $value ) { ?>
+            <?php foreach ( $data['data'] as $row_value ) { ?>
                 <tr>
-                    <?php foreach ( $pformfield as $k => $val ) { ?>
-                        <td><?php echo $value[$val['id']]; ?></td>
+                    <?php foreach ( $row_value as $val ) { ?>
+                        <td><?php echo $val; ?></td>
                     <?php } ?>
                 </tr>
             <?php } ?>

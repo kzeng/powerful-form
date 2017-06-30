@@ -56,6 +56,21 @@ class CustomerPformController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    public function actionExportstats()
+    {
+        $data = CustomerPform::statistic();
+        $file = \Yii::createObject([
+            'class' => 'codemix\excelexport\ExcelFile',
+            'sheets' => [
+                'Statistics' => [
+                    'titles' => $data['title'],
+                    'data' => $data['data'],
+                ],
+            ]
+        ]);
+
+        $file->send('statistics.xlsx');
+    }
     /**
      * Displays a single CustomerPform model.
      * @param integer $id

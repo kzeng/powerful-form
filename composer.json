@@ -30,7 +30,8 @@
         "kartik-v/yii2-tree-manager": "@dev",
         "kartik-v/yii2-markdown": "dev-master",
         "yiidoc/yii2-redactor": "*",
-        "2amigos/yii2-qrcode-helper": "*"
+        "2amigos/yii2-qrcode-helper": "*",
+        "codemix/yii2-excelexport": "*"
 
     },
     "require-dev": {

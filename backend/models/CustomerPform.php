@@ -3,6 +3,7 @@
 namespace backend\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "customer_pform".
@@ -46,5 +47,28 @@ class CustomerPform extends \yii\db\ActiveRecord
             'pform_field_id' => 'Pform Field ID',
             'value' => '字段内容',
         ];
+    }
+
+    public static function statistic() {
+        $command = \Yii::$app->db->createCommand('SELECT id,title FROM pform_field where pform_uid = "' . Yii::$app->request->get('uid') .'"');
+        $pformfield = $command->queryAll();
+        $command = \Yii::$app->db->createCommand('SELECT * FROM customer_pform where pform_uid = "' . Yii::$app->request->get('uid') .'"');
+        $customer_pform = $command->queryAll();
+        $customer_pform = ArrayHelper::map($customer_pform, 'pform_field_id', 'value', 'customer_pform_uid');
+
+        $return_data = [];
+
+        foreach ( $pformfield as $key => $value ) {
+            $return_data['title'][] = $value['title'];
+        }
+        foreach ( $customer_pform as $key => $value ) {
+            $temp = [];
+            foreach ( $pformfield as $k => $val ) {
+                $temp[] = $value[$val['id']];
+            }
+            $return_data['data'][] = $temp;
+        }
+
+        return $return_data;
     }
 }
