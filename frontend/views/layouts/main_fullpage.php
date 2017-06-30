@@ -26,7 +26,7 @@ AppAsset::register($this);
 
 
     <style>
-        body{
+        body .btn{
             font-family:"Microsoft Yahei";
         }
         .section1 { background: url(/uploads/1.png) 50%;}
