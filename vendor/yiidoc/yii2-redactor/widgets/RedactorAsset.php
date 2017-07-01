@@ -17,11 +17,11 @@ class RedactorAsset extends \yii\web\AssetBundle
     public $sourcePath = '@vendor/yiidoc/yii2-redactor/assets';
     public $depends = ['yii\web\JqueryAsset'];
 
-    public      $basePath = '@webroot/admin/assets',
-    public      $baseUrl = '@web/admin/assets',
-
     public function init()
     {
+        $basePath = '@webroot/admin/assets',
+        $baseUrl = '@web/admin/assets',
+
         if (YII_DEBUG) {
             $this->js[] = 'redactor.js';
             $this->css[] = 'redactor.css';
