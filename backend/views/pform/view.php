@@ -111,6 +111,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-md-4 platform-ios">
             <div class="device device-fixed" style="top: 85.5px;">
             <div class="device-content">
+              <h2><?= Html::encode($this->title) ?></h2>
               
             </div>
             </div>
