@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
     }
 
     .device {
-        display: none;
+        
         font-family: "Helvetica Neue",Helvetica,sans-serif;
         font-size: 17px;
         line-height: 21px;
@@ -79,7 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
 
-        <div class="col-md-6">
+        <div class="col-md-8">
             <?= DetailView::widget([
                 'model' => $model,
                 'options' => ['class' => 'table table-striped detail-view'],
@@ -108,11 +108,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ]) ?>
         </div>
 
-        <div class="col-md-6">
-            <div class="device device-fixed platform-ios" style="top: 85.5px;">
+        <div class="col-md-4 platform-ios">
+            <div class="device device-fixed" style="top: 85.5px;">
             <div class="device-content">
-                <span>preview</span>
-    
+              
             </div>
             </div>
         </div>
