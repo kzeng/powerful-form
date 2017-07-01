@@ -17,6 +17,9 @@ class RedactorAsset extends \yii\web\AssetBundle
     public $sourcePath = '@vendor/yiidoc/yii2-redactor/assets';
     public $depends = ['yii\web\JqueryAsset'];
 
+    public      $basePath = '@webroot/admin/assets',
+    public      $baseUrl = '@web/admin/assets',
+
     public function init()
     {
         if (YII_DEBUG) {
