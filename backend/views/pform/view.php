@@ -37,32 +37,42 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
     -->
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'options' => ['class' => 'table table-striped detail-view'],
-        'attributes' => [
-            'id',
-            'uid',
-            'title',
-            'description',
-            [
-               'attribute' => 'detail',
-               'format'=> 'html',
-            ],
+    <div class="row">
 
-            [
-                'label' => '包含字段',
-                'value' => $model->getFormField($model),
-                'format'=> 'html',
-            ],
+        <div class="col-md-8">
+            <?= DetailView::widget([
+                'model' => $model,
+                'options' => ['class' => 'table table-striped detail-view'],
+                'attributes' => [
+                    'id',
+                    'uid',
+                    'title',
+                    'description',
+                    [
+                       'attribute' => 'detail',
+                       'format'=> 'html',
+                    ],
+
+                    [
+                        'label' => '包含字段',
+                        'value' => $model->getFormField($model),
+                        'format'=> 'html',
+                    ],
 
 
-            'created_at:datetime',
-            'updated_at:datetime',
-            'user_id',
+                    'created_at:datetime',
+                    'updated_at:datetime',
+                    'user_id',
 
-        ],
-    ]) ?>
+                ],
+            ]) ?>
+        </div>
+
+        <div class="col-md-4">
+
+        </div>
+
+    </div>
 
 </div>
 
