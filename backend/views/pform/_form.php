@@ -40,6 +40,7 @@ use yii\widgets\ActiveForm;
         'clientOptions' => [
             'minHeight'=>200,
             'maxHeight'=>400,
+            'basePath' => dirname(__DIR__),
             'imageManagerJson' => ['/redactor/upload/image-json'],
             'imageUpload' => ['/redactor/upload/image'],
             'fileUpload' => ['/redactor/upload/file'],
