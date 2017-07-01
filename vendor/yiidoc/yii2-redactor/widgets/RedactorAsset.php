@@ -19,8 +19,8 @@ class RedactorAsset extends \yii\web\AssetBundle
 
     public function init()
     {
-        $basePath = '@webroot/admin/assets',
-        $baseUrl = '@web/admin/assets',
+        $basePath = '@webroot/admin/assets';
+        $baseUrl = '@web/admin/assets';
 
         if (YII_DEBUG) {
             $this->js[] = 'redactor.js';
