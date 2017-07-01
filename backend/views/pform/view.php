@@ -12,6 +12,49 @@ $this->params['breadcrumbs'][] = ['label' => '表单', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
+<style type="text/css">
+    
+    .platform-ios .device {
+        background-position: -395px 0;
+    }
+    @media screen and (min-width: 768px)
+    docs.min.css:9
+    .device.device-fixed {
+        position: fixed;
+        right: auto;
+    }
+    @media screen and (min-width: 1200px)
+    docs.min.css:9
+    .device {
+        margin-left: 39px;
+    }
+    @media screen and (min-width: 768px)
+    docs.min.css:9
+    .device {
+        position: relative;
+        top: 50px;
+        display: block;
+        width: 395px;
+        height: 813px;
+        margin-left: -20px;
+        font-family: "Helvetica Neue",sans-serif;
+        background-image: url(/uploads/device-sprite.png);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 300%;
+        -webkit-transition: background-image .1s linear;
+        -moz-transition: background-image .1s linear;
+        transition: background-image .1s linear;
+    }
+    docs.min.css:9
+    .device {
+        display: none;
+        font-family: "Helvetica Neue",Helvetica,sans-serif;
+        font-size: 17px;
+        line-height: 21px;
+    }
+</style>
+
 <script>
     var ajaxUrl = "<?= Url::to(['/site/ajax-broker']); ?>";
 </script>
@@ -69,7 +112,12 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
         <div class="col-md-4">
+            <div class="device device-fixed" id="" style="top: 85.5px;">
+            <div class="device-content">
 
+    
+            </div>
+            </div>
         </div>
 
     </div>
