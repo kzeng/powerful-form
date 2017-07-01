@@ -79,7 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
 
-        <div class="col-md-8">
+        <div class="col-md-6">
             <?= DetailView::widget([
                 'model' => $model,
                 'options' => ['class' => 'table table-striped detail-view'],
@@ -108,10 +108,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ]) ?>
         </div>
 
-        <div class="col-md-4">
-            <div class="device device-fixed" id="" style="top: 85.5px;">
+        <div class="col-md-6">
+            <div class="device device-fixed" style="top: 85.5px;">
             <div class="device-content">
-
+                <span>preview</span>
     
             </div>
             </div>
