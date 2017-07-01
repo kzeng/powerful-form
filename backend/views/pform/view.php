@@ -59,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
         left: 0;
         z-index: 11;
         content: '';
-        background-color: rgba(0,0,0,.3);
+
     }
 </style>
 
