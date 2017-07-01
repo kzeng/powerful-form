@@ -50,6 +50,17 @@ $this->params['breadcrumbs'][] = $this->title;
         font-size: 17px;
         line-height: 21px;
     }
+
+    #mybody #iwindow:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 11;
+        content: '';
+        background-color: rgba(0,0,0,.3);
+    }
 </style>
 
 <script>
@@ -109,7 +120,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
         <div class="col-md-4 platform-ios">
-            <div class="device device-fixed" style="top: 85.5px;">
+            <div class="device device-fixed" style="top: 77px;" id="mybody">
             <div class="device-content">
                 <div id="iwindow">
                     <h3><?= Html::encode($this->title) ?></h3>
@@ -124,9 +135,8 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 
+
 <!-- Modal -->
-
-
 <div class="modal fade"  id="myModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
