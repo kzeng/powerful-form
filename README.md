@@ -141,3 +141,4 @@ yii migrate --migrationPath=backend/migrations/
 
 ![demo5](https://git.oschina.net/uploads/images/2017/0701/143514_fb23706c_537766.png)
 
+![demo5](https://git.oschina.net/uploads/images/2017/0701/153149_862176c0_537766.jpeg)
