@@ -109,7 +109,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
         <div class="col-md-6">
-            <div class="device device-fixed" style="top: 85.5px;">
+            <div class="device device-fixed platform-ios" style="top: 85.5px;">
             <div class="device-content">
                 <span>preview</span>
     
