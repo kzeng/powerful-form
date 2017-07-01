@@ -17,19 +17,16 @@ $this->params['breadcrumbs'][] = $this->title;
     .platform-ios .device {
         background-position: -395px 0;
     }
-    @media screen and (min-width: 768px)
-    docs.min.css:9
+
     .device.device-fixed {
         position: fixed;
         right: auto;
     }
-    @media screen and (min-width: 1200px)
-    docs.min.css:9
+
     .device {
         margin-left: 39px;
     }
-    @media screen and (min-width: 768px)
-    docs.min.css:9
+
     .device {
         position: relative;
         top: 50px;
@@ -46,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
         -moz-transition: background-image .1s linear;
         transition: background-image .1s linear;
     }
-    docs.min.css:9
+
     .device {
         display: none;
         font-family: "Helvetica Neue",Helvetica,sans-serif;
