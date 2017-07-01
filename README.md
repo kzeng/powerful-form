@@ -100,12 +100,18 @@
   
 
 ##数据库
-使用migrate迁移数据表，命令如下：
+提供两种方式创建数据库。
+
+1.（推荐）使用migrate迁移数据表，命令如下：
 
 ```
 yii migrate 
 yii migrate --migrationPath=backend/migrations/
 ```
+
+或者
+
+2. 直接导入SQL文件 `/backend/models/db.sql` 。
 
 
 ##基本功能
