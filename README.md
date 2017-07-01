@@ -108,10 +108,9 @@
 yii migrate 
 yii migrate --migrationPath=backend/migrations/
 ```
-
 或者
 
-2. 直接导入SQL文件 `/backend/models/db.sql` 。
+2.直接导入SQL文件 /backend/models/db.sql 。
 
 
 ##基本功能
