@@ -59,7 +59,7 @@ return [
                 'pform/view/<id:\d+>' => 'pform/view',
                 'pform/update/<id:\d+>' => 'pform/update',
                 'cpform/create/<pfuid:\s+>' => 'customer-pform/create',
-                'cpform/statistics/<uid:\s+>' => 'ustomer-pform/statistics',
+                'cpform/statistics/<uid:\s+>' => 'customer-pform/statistics',
             ],
         ],
         
