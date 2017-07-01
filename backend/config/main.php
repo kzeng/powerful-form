@@ -56,6 +56,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'pform/<id:\d+>' => 'pform/view',
             ],
         ],
         
