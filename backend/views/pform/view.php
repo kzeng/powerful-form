@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
         line-height: 21px;
     }
 
-    #mybody #iwindow:before {
+   #iwindow {
         position: absolute;
         top: 0;
         right: 0;
@@ -59,7 +59,6 @@ $this->params['breadcrumbs'][] = $this->title;
         left: 0;
         z-index: 11;
         content: '';
-
     }
 </style>
 
