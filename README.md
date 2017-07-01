@@ -131,7 +131,7 @@ yii migrate --migrationPath=backend/migrations/
 
 ##屏幕截图
 
-![demo1](http://www.yiichina.com/uploads/images/201707/01143106668.png)
+<img width="50%" src="http://www.yiichina.com/uploads/images/201707/01143106668.png">
 
 ![demo2](https://git.oschina.net/uploads/images/2017/0701/143359_bcbaed34_537766.png)
 
