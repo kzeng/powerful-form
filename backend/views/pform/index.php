@@ -10,6 +10,14 @@ use yii\grid\GridView;
 $this->title = '用户表单';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<style type="text/css">
+    @media (min-width: 0px) and (max-width: 767px) {
+        .filter {
+            display: none;
+        }
+    }
+</style>
+
 <div class="pform-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -91,7 +99,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     foreach ($formfields as $formfield) {
                         $field_str = $field_str."【".$formfield->title."】<br>";
                     }
-                    return "<span style='color:blue; font-size:12pt'>".$field_str."</span>";
+                    return "<span>".$field_str."</span>";
                 },
                 'format' => 'html',
                 //'filter' => \common\models\CampaignOrder::getGhOption(),
@@ -189,7 +197,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             $("#preview").html(preview);
        
-            $("#form_title").html(form_title + '<small>' + preview1 + '</small>');
+            $("#form_title").html(form_title + '&nbsp;&nbsp; <small>' + preview1 + '</small>');
         });
 
     });//end of documnet ready
