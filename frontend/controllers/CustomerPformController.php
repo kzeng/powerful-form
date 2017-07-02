@@ -50,7 +50,7 @@ class CustomerPformController extends Controller
     public function actionPreview()
     {
         $text = $_GET['text'];
-        return $this->render('index', [
+        return $this->render('preview', [
             'text' => $text,
         ]);
     }
