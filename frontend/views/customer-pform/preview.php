@@ -100,20 +100,20 @@
 
 
 		#iphone {
-			background: url(/uploads/device-sprite.png) top no-repeat ;
+			background: url(/uploads/device-sprite1.png) top no-repeat ;
 			background-position: 0 12px;
 			}
 		#iphone-l {
-			background: url(/uploads/device-sprite.png) no-repeat 0 -93px;
+			background: url(/uploads/device-sprite1.png) no-repeat 0 -93px;
 			}
 		#ipad {
-			background: url(/uploads/device-sprite.png) no-repeat 0 -197px;
+			background: url(/uploads/device-sprite1.png) no-repeat 0 -197px;
 			}
 		#ipad-l {
-			background: url(/uploads/device-sprite.png) no-repeat 0 -306px;
+			background: url(/uploads/device-sprite1.png) no-repeat 0 -306px;
 			}
 		#desktop {
-			background: url(/uploads/device-sprite.png) no-repeat 0 -422px;
+			background: url(/uploads/device-sprite1.png) no-repeat 0 -422px;
 
 			}
 
@@ -298,8 +298,7 @@
 <script type="text/javascript">
 $(function() {
 	var text = "<?= $text ?>";
-
-	alert(text);
+	//alert(text);
 
 	$('#iphone').click(function() {
 		$("#screen-options li").removeClass("active");
@@ -376,12 +375,12 @@ $(function() {
     //// Check for url in url
     var givenURL = (RegExp('url=' + '(.+?)(&|$)').exec(location.search)||[,null])[1];
     if (givenURL == null){
-      ////set-up random url
-		  
-		base = "http://";
-		var urls = ["pf.mitoto.cn/customer-pform/create?pform_uid=594cd9feac29c"];
-		var randomURL = urls[Math.floor(Math.random() * urls.length)];
-		var randomhttpURL = (base + randomURL);
+    	
+		var randomURL = '';
+
+		//var randomhttpURL = (base + randomURL);
+		var randomhttpURL = text;
+		
     	$('#displayframe').attr('src', randomhttpURL);
          $('#getURL').attr('value', randomURL);
     }else{

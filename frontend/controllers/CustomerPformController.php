@@ -45,8 +45,6 @@ class CustomerPformController extends Controller
     }
 
       
-
-
     public function actionPreview()
     {
         $this->layout = false;
