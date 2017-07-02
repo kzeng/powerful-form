@@ -14,52 +14,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <style type="text/css">
     
-    .platform-ios .device {
-        background-position: -395px 0;
-    }
-
-    .device.device-fixed {
-        position: fixed;
-        right: auto;
-    }
-
-    .device {
-        margin-left: 39px;
-    }
-
-    .device {
-        position: relative;
-        top: 50px;
-        display: block;
-        width: 395px;
-        height: 813px;
-        margin-left: -20px;
-        font-family: "Helvetica Neue",sans-serif;
-        background-image: url(/uploads/device-sprite.png);
-        background-repeat: no-repeat;
-        background-position: 0 0;
-        background-size: 300%;
-        -webkit-transition: background-image .1s linear;
-        -moz-transition: background-image .1s linear;
-        transition: background-image .1s linear;
-    }
-
-    .device {
-        
-        font-family: "Helvetica Neue",Helvetica,sans-serif;
-        font-size: 17px;
-        line-height: 21px;
-    }
-
-   #iwindow {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 11;
-        content: '';
-    }
 </style>
 
 <script>
@@ -87,49 +41,33 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
     -->
 
-    <div class="row">
+    <?= DetailView::widget([
+        'model' => $model,
+        'options' => ['class' => 'table table-striped detail-view'],
+        'attributes' => [
+            'id',
+            'uid',
+            'title',
+            'description',
+            [
+               'attribute' => 'detail',
+               'format'=> 'html',
+            ],
 
-        <div class="col-md-8">
-            <?= DetailView::widget([
-                'model' => $model,
-                'options' => ['class' => 'table table-striped detail-view'],
-                'attributes' => [
-                    'id',
-                    'uid',
-                    'title',
-                    'description',
-                    [
-                       'attribute' => 'detail',
-                       'format'=> 'html',
-                    ],
-
-                    [
-                        'label' => '包含字段',
-                        'value' => $model->getFormField($model),
-                        'format'=> 'html',
-                    ],
+            [
+                'label' => '包含字段',
+                'value' => $model->getFormField($model),
+                'format'=> 'html',
+            ],
 
 
-                    'created_at:datetime',
-                    'updated_at:datetime',
-                    'user_id',
+            'created_at:datetime',
+            'updated_at:datetime',
+            'user_id',
 
-                ],
-            ]) ?>
-        </div>
+        ],
+    ]) ?>
 
-        <div class="col-md-4 platform-ios">
-            <div class="device device-fixed" style="top: 77px;" id="mybody">
-            <div class="device-content">
-                <div id="iwindow">
-                    <h3><?= Html::encode($this->title) ?></h3>
-
-                </div>
-            </div>
-            </div>
-        </div>
-
-    </div>
 
 </div>
 

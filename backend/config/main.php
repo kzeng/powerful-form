@@ -61,7 +61,6 @@ return [
 
                 'cpform/create/<pfuid:\w+>' => 'customer-pform/create',
                 'cpform/statistics/<uid:\w+>' => 'customer-pform/statistics',
-
             ],
         ],
         

@@ -160,6 +160,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="modal-body">
                 <h4 class="modal-title" id="form_title"></h4>
                 <div class="alert alert-success" role="alert" id="preview"</div>
+                <p>test</p>
                 
             </div>
             <div class="modal-footer">
