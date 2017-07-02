@@ -44,6 +44,17 @@ class CustomerPformController extends Controller
         ]);
     }
 
+      
+
+
+    public function actionPreview()
+    {
+        $text = $_GET['text'];
+        return $this->render('index', [
+            'text' => $text,
+        ]);
+    }
+
     /**
      * Displays a single CustomerPform model.
      * @param integer $id

@@ -159,9 +159,9 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <div class="modal-body">
                 <h4 class="modal-title" id="form_title"></h4>
+                <p id="preview1"></p>
                 <div class="alert alert-success" role="alert" id="preview"</div>
-                <p>test</p>
-                
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -175,6 +175,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <script type="text/javascript">
 
     $(document).ready(function(){
+        var host = "<?= Yii::$app->request->hostInfo ?>";
 
         $(".btn-form-link").click(function(){
 
@@ -182,8 +183,12 @@ $this->params['breadcrumbs'][] = $this->title;
             var form_title = $(this).attr("form_title_attr");
             
             var preview = "<img width=100% src='http://qr.liantu.com/api.php?text=" + form_link_attr +  "' /> <small class='center-block text-center'>手机扫一扫</small>";
+            var preview1 = host + "/customer-pform/preview?text" + form_link_attr +  "' />PC上预览</a>";
+
 
             $("#preview").html(preview);
+            $("#preview1").html(preview1);
+
             $("#form_title").html(form_title);
         });
 
