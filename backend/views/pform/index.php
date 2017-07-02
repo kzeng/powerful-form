@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     if(!empty($model->form_img_url))
                         $form_img_url = '<img src=/admin' . $model->form_img_url .' width=160px height=90px>';
                     else
-                        $form_img_url = '';
+                        $form_img_url = '<img src=http://usr.im/160x90>';
 
                     return $form_img_url;
                 },
