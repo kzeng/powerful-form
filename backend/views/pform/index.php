@@ -11,10 +11,8 @@ $this->title = '用户表单';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <style type="text/css">
-    @media (min-width: 0px) and (max-width: 767px) {
-        .filter {
-            display: none;
-        }
+    .filters {
+        display: none;
     }
 </style>
 
