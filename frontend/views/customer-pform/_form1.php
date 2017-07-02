@@ -20,7 +20,7 @@ $pform_fields = backend\models\PformField::find()
 
 <div class="customer-pform-form">
 <h3><?= $pform->title?></h3>
-<img src="<?= '/admin'.$pform->form_img_url?>" width="100%">
+<img src="<?= $pform->form_img_url?>" width="100%">
 <br><br>
 
 <?php if(empty($pform_fields)) {?>
