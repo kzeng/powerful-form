@@ -159,7 +159,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <div class="modal-body">
                 <h4 class="modal-title" id="form_title"></h4>
-                <p id="preview1"></p>
+
                 <div class="alert alert-success" role="alert" id="preview"</div>
 
             </div>
@@ -182,15 +182,14 @@ $this->params['breadcrumbs'][] = $this->title;
             var form_link_attr = $(this).attr("form_link_attr");
             var form_title = $(this).attr("form_title_attr");
             
-            var preview = "<img width=96 src='http://qr.liantu.com/api.php?text=" + form_link_attr +  "' /> <small class='center-block text-center'>手机扫一扫预览</small>";
+            var preview = "<img width=100% src='http://qr.liantu.com/api.php?text=" + form_link_attr +  "' /> <small class='center-block text-center'>手机扫一扫预览</small>";
             var preview1 = "<a href='" + host + "/customer-pform/preview?text=" + form_link_attr +  "'>PC上预览</a>";
 
             //var  preview1 = "<a href='http://m.baidu.com'>baidu</a>";
 
             $("#preview").html(preview);
-            $("#preview1").html(preview1);
-
-            $("#form_title").html(form_title);
+       
+            $("#form_title").html(form_title + '<small>' + preview1 + '</small>');
         });
 
     });//end of documnet ready
