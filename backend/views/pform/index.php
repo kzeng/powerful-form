@@ -176,7 +176,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     $(document).ready(function(){
         var host = "<?= Yii::$app->request->hostInfo ?>";
-        alert(text);
+        alert(host);
 
         $(".btn-form-link").click(function(){
 
