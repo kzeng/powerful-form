@@ -183,7 +183,7 @@ $this->params['breadcrumbs'][] = $this->title;
             var form_title = $(this).attr("form_title_attr");
             
             var preview = "<img width=100% src='http://qr.liantu.com/api.php?text=" + form_link_attr +  "' /> <small class='center-block text-center'>手机扫一扫</small>";
-            var preview1 = host + "/customer-pform/preview?text" + form_link_attr +  "' />PC上预览</a>";
+            var preview1 = "<a href='" + host + "/customer-pform/preview?text" + form_link_attr +  "' />PC上预览</a>";
 
 
             $("#preview").html(preview);
