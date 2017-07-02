@@ -49,6 +49,7 @@ class CustomerPformController extends Controller
 
     public function actionPreview()
     {
+        $this->layout = false;
         $text = $_GET['text'];
         return $this->render('preview', [
             'text' => $text,
