@@ -135,3 +135,13 @@ yii migrate --migrationPath=backend/migrations/
 <img width="50%" border="1" src="https://git.oschina.net/uploads/images/2017/0701/143514_fb23706c_537766.png">
 <img width="40%" border="1" src="https://git.oschina.net/uploads/images/2017/0701/153149_862176c0_537766.jpeg">
 
+
+##最后
+
+觉得还行可以给个 star 鼓励下哦 (￣▽￣)~*
+
+
+项目中还有很多问题和待优化的地方，我会持续更新这个项目。 如果发现有问题的地方或者建议等，很希望能告知联系，大家相互学习，共同进步呀。
+
+邮箱：zengkai001@qq.com
+
