@@ -11,6 +11,7 @@ class m170703_125040_create_pform_backcover_table extends Migration
     {
         $this->createTable('pform_backcover', [
             'id' => $this->primaryKey(),
+            'title' => $this->string(64)->notNull()->comment('标题'),
             'content' => $this->text()->comment('详情'),
             'pform_uid' => $this->string(64)->notNull()->comment('用户表单ID'),
         ]);

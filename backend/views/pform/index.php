@@ -23,6 +23,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('创建表单', ['create'], ['class' => 'btn btn-success']) ?>
+        &nbsp;&nbsp;
+         <?= Html::a('创建表单成功页', ['pform-backover/index'], ['class' => 'btn btn-primary']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

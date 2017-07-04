@@ -27,9 +27,9 @@ class PformBackcover extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['content', 'pform_uid'], 'required'],
+            [['content', 'pform_uid', 'title'], 'required'],
             [['content'], 'string'],
-            [['pform_uid'], 'string', 'max' => 64],
+            [['pform_uid','title'], 'string', 'max' => 64],
         ];
     }
 
@@ -40,7 +40,8 @@ class PformBackcover extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'content' => 'Content',
+            'title' => '标题',
+            'content' => '内容',
             'pform_uid' => 'Pform Uid',
         ];
     }
