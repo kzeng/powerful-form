@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+
 /**
  * PformBackcoverController implements the CRUD actions for PformBackcover model.
  */
@@ -55,6 +56,45 @@ class PformBackcoverController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
+
+
+    // 
+    public function actionAdd()
+    {
+        $uid = $_GET['uid'];
+        $pf_backcover = PformBackcover::findOne(['pform_uid' => $uid]);
+
+        if(empty($pf_backcover)) //create
+        {
+            $model = new PformBackcover();
+
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('create', [
+                    'model' => $model,
+                    'uid' => $uid,
+                ]);
+            }
+
+        }
+        else //update
+        {
+            //$model = $this->findModel($id);
+            $model  = $pf_backcover;
+
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('update', [
+                    'model' => $model,
+                ]);
+            }            
+         
+        }
+
+    }
+
 
     /**
      * Creates a new PformBackcover model.

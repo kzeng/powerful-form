@@ -14,6 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
     .filters {
         display: none;
     }
+
 </style>
 
 <div class="pform-index">
@@ -23,8 +24,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('创建表单', ['create'], ['class' => 'btn btn-success']) ?>
-        &nbsp;&nbsp;
-         <?= Html::a('创建表单成功页', ['pform-backover/index'], ['class' => 'btn btn-primary']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -145,12 +144,17 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'class' => 'yii\grid\ActionColumn', 
                  // 'label' => '填表数据',
-                'template' => '{view} {update} {delete} {list}',
+                'template' => '{addbackcover} {view} {update} {delete} {list}',
                 'headerOptions' => array('style'=>'width:12%;'),
                 'buttons' => [
                     'list' => function ($url, $model, $key) {
-                        return Html::a('<span class="glyphicon glyphicon-stats"></span>', ['customer-pform/statistics', 'uid' => $model->uid]);
+                        return Html::a('<span class="glyphicon glyphicon-stats"></span>', ['customer-pform/statistics', 'uid' => $model->uid], ['title' => '查看填表数据']);
                     },
+
+                    'addbackcover' => function ($url, $model, $key) {
+                        return Html::a('<span class="glyphicon glyphicon-star-empty"></span>', ['pform-backcover/add', 'uid' => $model->uid], ['title' => '增加填表成功页面']);
+                    },
+
                 ],
             ],
         ],

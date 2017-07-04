@@ -63,7 +63,7 @@ class PformBackcoverSearch extends PformBackcover
         ]);
 
         $query->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'title', $this->title]);
+            ->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'pform_uid', $this->pform_uid]);
 
         return $dataProvider;

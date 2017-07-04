@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\PformBackcover */
 
-$this->title = 'Update Pform Backcover: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Pform Backcovers', 'url' => ['index']];
+$this->title = '修改: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => '表单成功页面', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = '修改';
 ?>
 <div class="pform-backcover-update">
 
@@ -16,6 +16,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'flag' => 'update',
     ]) ?>
 
 </div>

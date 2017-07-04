@@ -4,6 +4,7 @@ namespace backend\models;
 
 use Yii;
 
+
 /**
  * This is the model class for table "pform_backcover".
  *
@@ -29,7 +30,7 @@ class PformBackcover extends \yii\db\ActiveRecord
         return [
             [['content', 'pform_uid', 'title'], 'required'],
             [['content'], 'string'],
-            [['pform_uid','title'], 'string', 'max' => 64],
+            [['pform_uid', 'title'], 'string', 'max' => 64],
         ];
     }
 

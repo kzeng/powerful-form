@@ -18,7 +18,7 @@ class m170629_134233_create_pform_field_table extends Migration
             'type' =>  $this->integer()->notNull()->comment('字段类型'),
             'value' => $this->string(255)->notNull()->comment('取值范围'),
             'placeholder' => $this->string(255)->comment('提示语'),
-            'sort' =>  $this->integer()->notNull()->defaultValue(255)->comment('排序'),
+            'sort' =>  $this->integer()->defaultValue(255)->comment('排序'),
             'pform_uid' => $this->string(64)->notNull()->comment('用户表单ID'),
         ]);
     }

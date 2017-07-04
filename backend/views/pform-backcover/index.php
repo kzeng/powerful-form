@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\PformBackcoverSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Pform Backcovers';
+$this->title = '表单成功页面';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pform-backcover-index">
@@ -16,16 +16,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Pform Backcover', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('创建', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
+            //['class' => 'yii\grid\SerialColumn'],
             'id',
-            'content:ntext',
+            'title',
+            //'content:ntext',
             'pform_uid',
 
             ['class' => 'yii\grid\ActionColumn'],
