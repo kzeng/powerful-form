@@ -41,15 +41,11 @@ use yii\widgets\ActiveForm;
 
 </div>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-
-
-		if('create' == "<?= $flag ?>")
-		{
-			alert("<?= $uid ?>");
-			$("#pformbackcover-pform_uid").val("<?= $uid ?>");
-		}
-
-	})
-</script>
+<?php 
+	if( $flag == "create") 
+	{
+?>
+	<script type="text/javascript">
+		$("#pformbackcover-pform_uid").val("<?= $uid ?>");
+	</script>
+<?php } ?>

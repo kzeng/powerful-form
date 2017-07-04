@@ -83,7 +83,9 @@ class PformBackcoverController extends Controller
             //$model = $this->findModel($id);
             $model  = $pf_backcover;
 
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            if ($model->load(Yii::$app->request->post())) {
+                 $model->pform_uid = $uid;
+                 $model->save(false);
                 return $this->redirect(['view', 'id' => $model->id]);
             } else {
                 return $this->render('update', [

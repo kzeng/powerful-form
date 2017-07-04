@@ -23,7 +23,6 @@ class m170629_134136_create_pform_table extends Migration
             'detail' => $this->text()->comment('详情'),
             'form_img_url' => $this->string()->comment('页头图片'),
             'user_id' => $this->integer()->notNull()->comment('创建者'),
-            'pf_backover_id' => $this->integer()->comment('表单成功页面'),
         ]);
     }
 
