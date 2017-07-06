@@ -136,17 +136,25 @@ yii migrate --migrationPath=backend/migrations/
 
 <table>
 <tr>
-<td><img width="30%" border="1" src="http://www.yiichina.com/uploads/images/201707/01143106668.png"></td>
-<td> <img width="30%" border="1" src="https://git.oschina.net/uploads/images/2017/0701/143359_bcbaed34_537766.png"></td>
+<td><img src="http://www.yiichina.com/uploads/images/201707/01143106668.png"></td>
+<td> <img src="https://git.oschina.net/uploads/images/2017/0701/143359_bcbaed34_537766.png"></td>
+</tr>
+
+<tr>
+<td><img src="https://git.oschina.net/uploads/images/2017/0701/143423_87671e38_537766.png"></td>
+<td><img src="https://git.oschina.net/uploads/images/2017/0701/143455_36ba1f78_537766.png"></td>
+</tr>
+
+<tr>
+<td><img src="https://git.oschina.net/uploads/images/2017/0701/143514_fb23706c_537766.png"></td>
+<td><img src="https://git.oschina.net/uploads/images/2017/0701/153149_862176c0_537766.jpeg"></td>
+</tr>
+
+<tr>
+<td><img src="https://git.oschina.net/uploads/images/2017/0706/224909_08145530_537766.jpeg"></td>
+<td></td>
 </tr>
 </table>
-
-<img width="26%" border="1" src="https://git.oschina.net/uploads/images/2017/0701/143423_87671e38_537766.png">
-<img width="26%" border="1" src="https://git.oschina.net/uploads/images/2017/0701/143455_36ba1f78_537766.png">
-<img width="30%" border="1" src="https://git.oschina.net/uploads/images/2017/0701/143514_fb23706c_537766.png">
-<img width="25%" border="1" src="https://git.oschina.net/uploads/images/2017/0701/153149_862176c0_537766.jpeg">
-<img width="25%" border="1" src="https://git.oschina.net/uploads/images/2017/0706/224909_08145530_537766.jpeg">
-
 
 
 
