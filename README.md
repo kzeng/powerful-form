@@ -134,8 +134,8 @@ yii migrate --migrationPath=backend/migrations/
 
 ##屏幕截图
 
-<img width="30%" border="1" src="http://www.yiichina.com/uploads/images/201707/01143106668.png">
-<img width="30%" border="1" src="https://git.oschina.net/uploads/images/2017/0701/143359_bcbaed34_537766.png">
+
+
 <img width="26%" border="1" src="https://git.oschina.net/uploads/images/2017/0701/143423_87671e38_537766.png">
 <img width="26%" border="1" src="https://git.oschina.net/uploads/images/2017/0701/143455_36ba1f78_537766.png">
 <img width="30%" border="1" src="https://git.oschina.net/uploads/images/2017/0701/143514_fb23706c_537766.png">
@@ -143,6 +143,11 @@ yii migrate --migrationPath=backend/migrations/
 <img width="25%" border="1" src="https://git.oschina.net/uploads/images/2017/0706/224909_08145530_537766.jpeg">
 
 
+
+| ------------- |:-------------:| 
+| <img width="30%" border="1" src="http://www.yiichina.com/uploads/images/201707/01143106668.png">   | <img width="30%" border="1" src="https://git.oschina.net/uploads/images/2017/0701/143359_bcbaed34_537766.png"> | 
+| col 2 is      | centered      |   
+| zebra stripes | are neat      | 
 
 
 ##最后
