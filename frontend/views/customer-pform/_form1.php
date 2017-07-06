@@ -30,13 +30,37 @@ $pform_fields = backend\models\PformField::find()
 	<form id="form1">
 	<input type="hidden" id="form_uid" value="<?= $pform->uid ?>">
 	<?php foreach ($pform_fields as $pform_field) { ?>
-	<div class="form-group">
 
-		<input type="hidden" class="myformfield_id" value="<?= $pform_field->id ?>">
-	    <label class="control-label" for="field_title"><?= $pform_field->title ?></label>
-	    <input type="text"  class="form-control myformfield"  maxlength="64" placeholder="<?= $pform_field->placeholder ?>">
-	    <div class="help-block"></div>
-	</div>
+		<?php if($pform_field->type == 4) { ?><!-- 单选 -->
+			<div class="form-group">
+				<input type="hidden" class="myformfield_id" value="<?= $pform_field->id ?>">
+			    <label class="control-label" for="field_title"><?= $pform_field->title ?></label>
+			    
+			    <select  class="form-control myformfield">
+					<?php 
+						$opts = explode(" ",$pform_field->value);
+						if(empty($opts)) $opts = ['---'];
+
+						for( $i=0; $i<count($opts); $i++) 
+						{ 
+					?>	
+						<option> <?= $opts[$i] ?> </option>
+					<?php
+						} 
+					?>
+			    </select>
+			    <div class="help-block"></div>
+			</div>
+		<?php } else { ?>
+			<div class="form-group">
+				<input type="hidden" class="myformfield_id" value="<?= $pform_field->id ?>">
+			    <label class="control-label" for="field_title"><?= $pform_field->title ?></label>
+			    <input type="text"  class="form-control myformfield"  maxlength="64" placeholder="<?= $pform_field->placeholder ?>">
+			    <div class="help-block"></div>
+			</div>
+		<?php } ?>
+
+
 	<?php } ?>
 
 	<div class="form-group">
