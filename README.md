@@ -149,6 +149,12 @@ yii migrate --migrationPath=backend/migrations/
 | col 2 is      | centered      |   
 | zebra stripes | are neat      | 
 
+<table>
+<tr>
+<td>11</td>
+<td>22</td>
+</tr>
+</table>
 
 ##最后
 
