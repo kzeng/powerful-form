@@ -69,7 +69,8 @@ class PformBackcoverController extends Controller
             $model = new PformBackcover();
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+                //return $this->redirect(['view', 'id' => $model->id]);
+                return $this->redirect(['pform/index']);
             } else {
                 return $this->render('create', [
                     'model' => $model,
@@ -86,7 +87,8 @@ class PformBackcoverController extends Controller
             if ($model->load(Yii::$app->request->post())) {
                  $model->pform_uid = $uid;
                  $model->save(false);
-                return $this->redirect(['view', 'id' => $model->id]);
+                 //return $this->redirect(['view', 'id' => $model->id]);
+                 return $this->redirect(['pform/index']);
             } else {
                 return $this->render('update', [
                     'model' => $model,
