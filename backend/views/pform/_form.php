@@ -53,7 +53,16 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'detail')->widget(TinyMce::className(), [
         'clientOptions' => [
             'language' => 'zh_CN',
-             'mode' => "textareas", 
+   
+            // 'width' => 300,
+            // 'height' => 300,
+
+            'plugins' => [
+                 "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                 "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                 "save table contextmenu directionality emoticons template paste textcolor"
+           ],
+
         ]
     ]); ?>
 
