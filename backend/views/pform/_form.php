@@ -57,12 +57,11 @@ use pendalf89\filemanager\widgets\TinyMCE;
             'language' => 'zh_CN',
             'menubar' => false,
             //'menubar' => true,
-            'height' => 400,
+            'height' => 380,
             'image_dimensions' => false,
             //'image_dimensions' => true,
             //'image_prepend_url' => 'http://127.0.0.1/yii2-app-kit/backend/web',
             //'image_prepend_url' => Yii::getAlias('@backend'),
-
             //'image_prepend_url' => 'http://pf.mitoto.cn/admin',
 
             'plugins' => [
