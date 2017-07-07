@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
-
+ use pendalf89\tinymce\TinyMce;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Pform */
@@ -36,7 +36,7 @@ use yii\widgets\ActiveForm;
 
 
 
-    <?= $form->field($model, 'detail')->widget(\yii\redactor\widgets\Redactor::className(), [
+<!--     <、、?= $form->field($model, 'detail')->widget(\yii\redactor\widgets\Redactor::className(), [
         'clientOptions' => [
             'minHeight'=>200,
             'maxHeight'=>400,
@@ -47,6 +47,21 @@ use yii\widgets\ActiveForm;
             'plugins' => ['clips', 'fontcolor','imagemanager']
         ]
     ])?>
+ -->
+
+
+    <?= $form->field($model, 'detail')->widget(TinyMce::className(), [
+        'clientOptions' => [
+            'language' => 'zh-CN',
+            'plugins' => [
+                "advlist autolink lists link charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste"
+            ],
+            'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        ]
+    ]); ?>
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? '创建' : '更新', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
