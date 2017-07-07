@@ -106,6 +106,7 @@
 ```
 yii migrate 
 yii migrate --migrationPath=backend/migrations/
+yii migrate --migrationPath=vendor/pendalf89/yii2-filemanager/migrations
 ```
 
 
