@@ -52,7 +52,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'detail')->widget(TinyMce::className(), [
         'clientOptions' => [
-            'language' => 'zh-CN',
+            //'language' => 'zh-CN',
             'plugins' => [
                 "advlist autolink lists link charmap print preview anchor",
                 "searchreplace visualblocks code fullscreen",
