@@ -50,24 +50,24 @@ use yii\widgets\ActiveForm;
  -->
 
 
-    <?= $form->field($model, 'detail')->widget(TinyMce::className(), [
+
+    <?= $form->field($model, 'detail')->widget(TinyMCE::className(), [
         'clientOptions' => [
             'language' => 'zh_CN',
-   
-            // 'width' => 300,
-            // 'height' => 300,
-
+            'menubar' => false,
+            //'menubar' => true,
+            'height' => 500,
+            'image_dimensions' => false,
+            //'image_dimensions' => true,
+            //'image_prepend_url' => 'http://127.0.0.1/yii2-app-kit/backend/web',
+            'image_prepend_url' => Yii::getAlias('@backend'),
+            
             'plugins' => [
-                 "textcolor advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-                 "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-                 "save table contextmenu directionality emoticons template paste textcolor"
-           ],
-
-        'toolbar' => ""
-
-        ]
+                'advlist autolink lists link image media emoticons template textcolor charmap print preview anchor searchreplace visualblocks code contextmenu table imagetools',
+            ],
+            'toolbar' => 'undo redo | styleselect |forecolor backcolor emoticons| bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media| code',
+        ],
     ]); ?>
-
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? '创建' : '更新', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
