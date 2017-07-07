@@ -63,7 +63,7 @@ use yii\widgets\ActiveForm;
             'image_prepend_url' => Yii::getAlias('@backend'),
             
             'plugins' => [
-                'advlist autolink lists link image media emoticons template forecolor textcolor charmap print preview anchor searchreplace visualblocks code contextmenu table imagetools',
+                'advlist autolink lists link image media emoticons template textcolor charmap print preview anchor searchreplace visualblocks code contextmenu table imagetools',
             ],
             'toolbar' => 'undo redo | styleselect |forecolor backcolor emoticons| bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media| code',
         ],
