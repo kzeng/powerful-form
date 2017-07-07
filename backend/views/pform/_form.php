@@ -3,8 +3,9 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
- use pendalf89\tinymce\TinyMce;
 
+
+use pendalf89\filemanager\widgets\TinyMCE;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Pform */
 /* @var $form yii\widgets\ActiveForm */
