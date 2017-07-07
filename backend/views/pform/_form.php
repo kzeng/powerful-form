@@ -63,7 +63,7 @@ use pendalf89\filemanager\widgets\TinyMCE;
             //'image_prepend_url' => 'http://127.0.0.1/yii2-app-kit/backend/web',
             //'image_prepend_url' => Yii::getAlias('@backend'),
 
-            'image_prepend_url' => 'http://pf.mitoto.cn/admin',
+            //'image_prepend_url' => 'http://pf.mitoto.cn/admin',
 
             'plugins' => [
                 'advlist autolink lists link image media template textcolor colorpicker charmap print preview anchor searchreplace visualblocks code contextmenu table imagetools',

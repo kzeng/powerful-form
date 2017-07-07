@@ -36,15 +36,15 @@ return [
         // Thumbnails info
         'thumbs' => [
             'small' => [
-                'name' => 'Мелкий',
+                'name' => 'samll',
                 'size' => [100, 100],
             ],
             'medium' => [
-                'name' => 'Средний',
+                'name' => 'medium',
                 'size' => [300, 200],
             ],
             'large' => [
-                'name' => 'Большой',
+                'name' => 'large',
                 'size' => [500, 400],
             ],
         ],
