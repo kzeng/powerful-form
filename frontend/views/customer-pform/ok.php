@@ -14,7 +14,7 @@ use yii\widgets\DetailView;
 恭喜！
 </h1>
 
-<p>您已经成功提交。</p>
+<h3>您的信息已成功提交。</h3>
 </center>
 
 
