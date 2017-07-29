@@ -51,7 +51,7 @@ $pform_fields = backend\models\PformField::find()
 			    </select>
 			    <div class="help-block"></div>
 			</div>
-		<?php else if($pform_field->type == 2) { ?><!-- 手机号码 -->
+		<?php } else if($pform_field->type == 2) { ?><!-- 手机号码 -->
 			<div class="form-group">
 				<input type="hidden" class="myformfield_id" value="<?= $pform_field->id ?>">
 			    <label class="control-label" for="field_title"><?= $pform_field->title ?></label>
