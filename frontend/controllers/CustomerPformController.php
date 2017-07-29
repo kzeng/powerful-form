@@ -135,6 +135,7 @@ class CustomerPformController extends Controller
 
     public function actionOk()
     {
+        $this->layout = 'myform';
         return $this->render('ok');
     }
 }
