@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 
@@ -104,7 +105,8 @@ $pform_fields = backend\models\PformField::find()
 	            	if(ret['code'] ==0)
 	            		alert('您已经成功提交表单，谢谢。');
 
-	                location.reload();
+	                	//location.reload();
+	                	location.href = '<?php echo Url::to(['/customer-pform/ok'], true) ?>';
 	            },
 	            error: function () {
 	            }

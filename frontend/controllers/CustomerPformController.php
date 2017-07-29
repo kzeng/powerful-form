@@ -44,7 +44,6 @@ class CustomerPformController extends Controller
         ]);
     }
 
-      
     public function actionPreview()
     {
         $this->layout = false;
@@ -131,5 +130,11 @@ class CustomerPformController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+
+    public function actionOk()
+    {
+        return $this->render('ok');
     }
 }
