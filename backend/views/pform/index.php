@@ -144,7 +144,8 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'class' => 'yii\grid\ActionColumn', 
                  // 'label' => '填表数据',
-                'template' => '{addbackcover} {view} {update} {delete} {list}',
+                //'template' => '{addbackcover} {view} {update} {delete} {list}',
+                'template' => '{addbackcover} {view} {update} {list}',
                 'headerOptions' => array('style'=>'width:12%;'),
                 'buttons' => [
                     'list' => function ($url, $model, $key) {
