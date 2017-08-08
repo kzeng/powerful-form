@@ -81,7 +81,7 @@ $customerform_count = \backend\models\CustomerPform::find()
 		<button type="button" class="btn btn-success btn-block btn-lg" id="addCustomerFormData">确定</button>
 	</div>
 
-	<p style="align:right">
+	<p class="pull-right">
 	<span style="color: #ccc; font-size: 12px">* 已有</span>
 	<span style="color: red; font-size: 16px"><?= $customerform_count ?></span>
 	<span style="color: #ccc; font-size: 12px">人报名</span>
