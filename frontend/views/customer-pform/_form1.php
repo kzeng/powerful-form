@@ -12,6 +12,12 @@ $pform_fields = backend\models\PformField::find()
 				->where(['pform_uid' => $pform->uid])
 				->orderBy(['id' => SORT_ASC])
 				->all();
+
+$customerform_count = \backend\models\CustomerPform::find()
+        ->select(['customer_pform_uid'])
+        ->where(["pform_uid" => $pform->uid])
+        ->distinct()
+        ->count();		
 ?>
 
 <script>
@@ -27,6 +33,11 @@ $pform_fields = backend\models\PformField::find()
 	<h1>您还没有为表单增加任何字段哟~</h1>
 
 <?php } else { ?>
+
+	<span style="color: #ccc; font-size: 12px">已有</span>
+	<span style="color: red; font-size: 16px"><?= $customerform_count ?></span>
+	<span style="color: #ccc; font-size: 12px">人报名。</span>
+	
 	<form id="form1">
 	<input type="hidden" id="form_uid" value="<?= $pform->uid ?>">
 	<?php foreach ($pform_fields as $pform_field) { ?>
