@@ -34,14 +34,13 @@ $customerform_count = \backend\models\CustomerPform::find()
 
 <?php } else { ?>
 
-	<form id="form1">
-
 	<p class="pull-right" style="background-color:yellow">
 	<span style="color: #ccc; font-size: 16px">* 已有</span>
 	<span style="color: red; font-size: 22px">29</span>
 	<span style="color: #ccc; font-size: 16px">人报名</span>
 	</p>
 
+	<form id="form1">
 	<input type="hidden" id="form_uid" value="<?= $pform->uid ?>">
 	<?php foreach ($pform_fields as $pform_field) { ?>
 
