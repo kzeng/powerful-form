@@ -35,6 +35,13 @@ $customerform_count = \backend\models\CustomerPform::find()
 <?php } else { ?>
 
 	<form id="form1">
+
+	<p class="pull-right" style="background-color:yellow">
+	<span style="color: #ccc; font-size: 16px">* 已有</span>
+	<span style="color: red; font-size: 22px">29</span>
+	<span style="color: #ccc; font-size: 16px">人报名</span>
+	</p>
+
 	<input type="hidden" id="form_uid" value="<?= $pform->uid ?>">
 	<?php foreach ($pform_fields as $pform_field) { ?>
 
@@ -80,12 +87,6 @@ $customerform_count = \backend\models\CustomerPform::find()
 	<div class="form-group">
 		<button type="button" class="btn btn-success btn-block btn-lg" id="addCustomerFormData">确定</button>
 	</div>
-
-	<p class="pull-right">
-	<span style="color: #ccc; font-size: 12px">* 已有</span>
-	<span style="color: red; font-size: 16px"><?= $customerform_count ?></span>
-	<span style="color: #ccc; font-size: 12px">人报名</span>
-	</p>
 
 	</form>
 <?php } ?>
