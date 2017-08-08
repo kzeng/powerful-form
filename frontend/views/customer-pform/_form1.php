@@ -27,18 +27,19 @@ $customerform_count = \backend\models\CustomerPform::find()
 <div class="customer-pform-form">
 <h3><?= $pform->title?></h3>
 <img src="<?= $pform->form_img_url?>" width="100%">
-<br><br>
+
+<br>
+	<p class="pull-right" style="background-color:yellow">
+	<span style="color: #ccc; font-size: 16px">* 已有</span>
+	<span style="color: red; font-size: 22px"><?= $customerform_count ?></span>
+	<span style="color: #ccc; font-size: 16px">人报名</span>
+	</p>
+<br>
 
 <?php if(empty($pform_fields)) {?>
 	<h1>您还没有为表单增加任何字段哟~</h1>
 
 <?php } else { ?>
-
-	<p class="pull-right" style="background-color:yellow">
-	<span style="color: #ccc; font-size: 16px">* 已有</span>
-	<span style="color: red; font-size: 22px">29</span>
-	<span style="color: #ccc; font-size: 16px">人报名</span>
-	</p>
 
 	<form id="form1">
 	<input type="hidden" id="form_uid" value="<?= $pform->uid ?>">
