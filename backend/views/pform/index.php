@@ -77,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
                     $form_title = $model->title;
 
-                    return "<button class='btn btn-default btn-form-link' data-toggle='modal' data-target='#myModal1' form_title_attr='".$form_title."' form_link_attr='".$form_link."'><i class='glyphicon glyphicon-phone'></i> 预览</button>";
+                    return "<button class='btn btn-default btn-form-link' data-toggle='modal' data-target='#myModal1' form_title_attr='".$form_title."' form_link_attr='".$form_link."'><i class='glyphicon glyphicon-phone'></i> 预览</button>" . <br> . $form_link;
                 },
 
                 //'headerOptions' => array('style'=>'width:70px;'),
