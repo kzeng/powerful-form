@@ -142,6 +142,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             ->count();
                         return $customerform_count;
                     },
+                    'headerOptions' => array('style'=>'width:12%;'),
                 ],
 
             [
