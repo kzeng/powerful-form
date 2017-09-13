@@ -60,7 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function($model, $key, $index, $column){
 
                     $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
-                    return $title . "<br>" . $form_link;
+                    return $model->title . "<br>" . $form_link;
                 },
                 'headerOptions' => array('style'=>'width:300px;'),
             ],
