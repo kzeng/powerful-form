@@ -47,17 +47,25 @@ $this->params['breadcrumbs'][] = $this->title;
                     else
                         $form_img_url = '<img src=http://usr.im/160x90>';
 
-
-                    $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
-
-                    return $form_img_url . "<br>" . $form_link;
+                    return $form_img_url;
                 },
                 'headerOptions' => array('style'=>'width:160px;'),
             ],
 
             //'uid',
-            'title',
+            //'title',
+            [
+                'attribute' => 'title',
+                'format' => 'html',
+                'value' => function($model, $key, $index, $column){
 
+                    $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
+                    return $title . "<br>" . $form_link;
+                },
+                'headerOptions' => array('style'=>'width:300px;'),
+            ],
+
+     
            //'description',
 
             // [
@@ -142,7 +150,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             ->count();
                         return $customerform_count;
                     },
-                    'headerOptions' => array('style'=>'width:12%;'),
+                    'headerOptions' => array('style'=>'width:14%;'),
                 ],
 
             [
