@@ -47,7 +47,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     else
                         $form_img_url = '<img src=http://usr.im/160x90>';
 
-                    return $form_img_url;
+
+                    $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
+
+                    return $form_img_url . "<br>" . $form_link;
                 },
                 'headerOptions' => array('style'=>'width:160px;'),
             ],
@@ -77,7 +80,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
                     $form_title = $model->title;
 
-                    return "<button class='btn btn-default btn-form-link' data-toggle='modal' data-target='#myModal1' form_title_attr='".$form_title."' form_link_attr='".$form_link."'><i class='glyphicon glyphicon-phone'></i> 预览</button>" . <br> . $form_link;
+                    return "<button class='btn btn-default btn-form-link' data-toggle='modal' data-target='#myModal1' form_title_attr='".$form_title."' form_link_attr='".$form_link."'><i class='glyphicon glyphicon-phone'></i> 预览</button>";
                 },
 
                 //'headerOptions' => array('style'=>'width:70px;'),
