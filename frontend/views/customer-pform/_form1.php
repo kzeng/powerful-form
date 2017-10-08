@@ -23,7 +23,7 @@ $customerform_count = \backend\models\CustomerPform::find()
 <script>
     var ajaxUrl = "<?= Url::to(['/site/ajax-broker']); ?>";
 </script>
-
+ 
 <div class="customer-pform-form">
 <h3><?= $pform->title?></h3>
 <img src="<?= $pform->form_img_url?>" width="100%">
@@ -31,7 +31,7 @@ $customerform_count = \backend\models\CustomerPform::find()
 <br>
 	<p class="pull-right" style="background-color:yellow">
 	<span style="color: #ccc; font-size: 16px">* 已有</span>
-	<span style="color: red; font-size: 22px"><?= $customerform_count ?></span>
+	<span style="color: red; font-size: 22px"><?= $customerform_count + 100 ?></span>
 	<span style="color: #ccc; font-size: 16px">人报名</span>
 	</p>
 <br>
