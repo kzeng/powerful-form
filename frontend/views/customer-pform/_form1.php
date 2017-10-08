@@ -144,7 +144,7 @@ $customerform_count = \backend\models\CustomerPform::find()
 			    var text = $(this).val();
 			    if(text ==""){
 			        flag = 1;
-			        break;
+			        return false
 			    }
 			});
 
