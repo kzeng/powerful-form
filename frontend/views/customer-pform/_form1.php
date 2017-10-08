@@ -139,6 +139,16 @@ $customerform_count = \backend\models\CustomerPform::find()
 
 		$('#addCustomerFormData').click(function(){
 			
+			var sum = 0;
+			$("input[type=text]").each(function(i){
+			    var text = $(this).val();
+			    if(text ==""){
+			        alert("请完善表单信息，谢谢。");
+			        return false;
+			    }
+			});
+
+
 	    	$(".myformfield").each(function(){
 	    		//alert($(this).val());
 	    		if(flag == 0)
