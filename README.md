@@ -1,8 +1,8 @@
-#超级表单
+# 超级表单
 人人可用的在线表单工具
 超级表单帮你收集和管理日常工作中的数据，把几小时的工作节约至零。
 
-##安装与配置
+## 安装与配置
   1. 通过Git安装
 
     ```bash
@@ -99,7 +99,7 @@
   4. 创建一个新数据库，调整`components['db']`配置在`common/config/main-local.php`.
   
 
-##数据库
+## 数据库
 
 使用migrate迁移数据表，命令如下：
 
@@ -111,9 +111,9 @@ yii migrate --migrationPath=vendor/pendalf89/yii2-filemanager/migrations
 
 
 
-##基本功能
+## 基本功能
 
-###已经支持功能
+### 已经支持功能
 1. 用户网站注册
 2. 用户通过自定义表单字段生成表单
 3. 用户能方便的引用表单连接来使用自定义表单，用来收集其客户的信息。
@@ -126,14 +126,14 @@ yii migrate --migrationPath=vendor/pendalf89/yii2-filemanager/migrations
 9. 增加手机预览功能，二维码。
 
 
-###即将支持功能
+### 即将支持功能
 1. 收集数据的类型：单选、多选、图片
 2. 增加表单页面头部图片展示或轮播。
 3. 表单页底部增加企业名称，口号等信息。高级版本支持！
 4. 内置典型行业模板表单，一键选用。高级版本支持！
 
 
-##屏幕截图
+## 屏幕截图
 
 <table>
 <tr>
@@ -159,7 +159,7 @@ yii migrate --migrationPath=vendor/pendalf89/yii2-filemanager/migrations
 
 
 
-##最后
+## 最后
 
 觉得还行可以给个 star 鼓励下哦 (￣▽￣)~*
 
