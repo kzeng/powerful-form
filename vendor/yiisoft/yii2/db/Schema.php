@@ -8,7 +8,7 @@
 namespace yii\db;
 
 use Yii;
-use yii\base\Object;
+use yii\base\BaseObject;
 use yii\base\NotSupportedException;
 use yii\base\InvalidCallException;
 use yii\caching\Cache;
@@ -35,7 +35,7 @@ use yii\caching\TagDependency;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-abstract class Schema extends Object
+abstract class Schema extends BaseObject
 {
     /**
      * The following are the supported abstract column data types.

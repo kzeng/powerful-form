@@ -7,13 +7,13 @@
 
 namespace yii\rbac;
 
-use yii\base\Object;
+use yii\base\BaseObject;
 
 /**
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class Item extends Object
+class Item extends BaseObject
 {
     const TYPE_ROLE = 1;
     const TYPE_PERMISSION = 2;

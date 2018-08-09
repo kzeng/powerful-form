@@ -8,7 +8,7 @@
 namespace yii\mail;
 
 use yii\base\ErrorHandler;
-use yii\base\Object;
+use yii\base\BaseObject;
 use Yii;
 
 /**
@@ -22,7 +22,7 @@ use Yii;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
  */
-abstract class BaseMessage extends Object implements MessageInterface
+abstract class BaseMessage extends BaseObject implements MessageInterface
 {
     /**
      * @var MailerInterface the mailer instance that created this message.

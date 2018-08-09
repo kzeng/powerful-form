@@ -1,12 +1,12 @@
 <?php
 namespace codemix\excelexport;
 
-use yii\base\Object;
+use yii\base\BaseObject;
 
 /**
  * An excel worksheet
  */
-class ExcelSheet extends Object
+class ExcelSheet extends BaseObject
 {
     protected $_sheet;
     protected $_data;

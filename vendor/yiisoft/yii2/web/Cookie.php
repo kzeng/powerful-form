@@ -13,7 +13,7 @@ namespace yii\web;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class Cookie extends \yii\base\Object
+class Cookie extends \yii\base\BaseObject
 {
     /**
      * @var string name of the cookie

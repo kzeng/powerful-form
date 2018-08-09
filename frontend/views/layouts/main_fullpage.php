@@ -21,8 +21,8 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <link rel="stylesheet" href="http://cdn.dowebok.com/77/css/jquery.fullPage.css">
-    <script src="http://cdn.dowebok.com/77/js/jquery.fullPage.min.js"></script>
+    <link rel="stylesheet" href="/css/jquery.fullPage.css">
+    <script src="/js/jquery.fullPage.min.js"></script>
 
 
     <style>
