@@ -60,11 +60,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format'=> 'html',
             ],
 
-
             'created_at:datetime',
             'updated_at:datetime',
-            'user_id',
-
+            //'user_id',
         ],
     ]) ?>
 

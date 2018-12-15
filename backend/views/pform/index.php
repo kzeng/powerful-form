@@ -157,16 +157,21 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => 'yii\grid\ActionColumn', 
                  // 'label' => '填表数据',
                 //'template' => '{addbackcover} {view} {update} {delete} {list}',
-                'template' => '{addbackcover} {view} {update} {list}',
+                'template' => '{myview} {addbackcover} {update} {list}',
                 'headerOptions' => array('style'=>'width:12%;'),
                 'buttons' => [
+                    'myview' => function ($url, $model, $key) {
+                        return Html::a('<span class="glyphicon glyphicon-plus" style="color:#5CB85C"></span>&nbsp;', ['pform/view', 'id' => $model->id], ['title' => '添加表单字段']);
+                    },
+
                     'list' => function ($url, $model, $key) {
-                        return Html::a('<span class="glyphicon glyphicon-stats"></span>', ['customer-pform/statistics', 'uid' => $model->uid], ['title' => '查看填表数据']);
+                        return Html::a('&nbsp;&nbsp;<span class="glyphicon glyphicon-stats"></span>&nbsp;', ['customer-pform/statistics', 'uid' => $model->uid], ['title' => '查看填表数据']);
                     },
 
                     'addbackcover' => function ($url, $model, $key) {
-                        return Html::a('<span class="glyphicon glyphicon-star-empty"></span>', ['pform-backcover/add', 'uid' => $model->uid], ['title' => '增加填表成功页面']);
+                        return Html::a('&nbsp;<span class="glyphicon glyphicon-star-empty"></span>&nbsp;', ['pform-backcover/add', 'uid' => $model->uid], ['title' => '增加填表成功页面']);
                     },
+
 
                 ],
             ],
