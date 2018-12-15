@@ -10,16 +10,28 @@ $data = \backend\models\CustomerPform::statistic();
 ?>
 <div class="customer-pform-index">
     <h1><?= Html::encode($this->title) ?></h1>
-    <p>
-        <?= Html::a('导出', ['exportstats', 'uid' => Yii::$app->request->get('uid')], ['class' => 'btn btn-success']) ?>
-    </p>
+
     <?php if ( $data ) { ?>
+        <?php 
+            if( empty($data['data']) )
+            {
+        ?>
+            <div class="alert alert-info" role="alert">到目前为止还没有收集到数据哟~</div>
+        <?php
+            }
+            else
+            {
+        ?>
+        <p>
+            <?= Html::a('导出', ['exportstats', 'uid' => Yii::$app->request->get('uid')], ['class' => 'btn btn-success']) ?>
+        </p>
         <table class='table'>
             <tr>
                 <?php foreach ( $data['title'] as $column_title ) { ?>
                     <th><?php echo $column_title;?></th>
                 <?php } ?>
             </tr>
+
             <?php foreach ( $data['data'] as $row_value ) { ?>
                 <tr>
                     <?php foreach ( $row_value as $val ) { ?>
@@ -28,5 +40,8 @@ $data = \backend\models\CustomerPform::statistic();
                 </tr>
             <?php } ?>
         </table>
+
+        <?php } ?>
+
     <?php } ?>
 </div>

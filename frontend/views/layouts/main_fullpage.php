@@ -52,6 +52,14 @@ AppAsset::register($this);
                 border-color: #c6e0f7;
             }
 
+            .navbar-inverse .btn-link {
+                color: #333;
+            }
+
+            .navbar-inverse .navbar-brand {
+                color: #333;
+            }
+
             .btn-success {
             color: #f5f5f5;
             background-color: rgba(255, 255, 255, .15);
