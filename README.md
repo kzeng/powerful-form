@@ -136,7 +136,7 @@ yii migrate --migrationPath=vendor/pendalf89/yii2-filemanager/migrations
 
 ## 屏幕截图
 
-<table>
+<table width="60%">
 <tr>
 <td><img src="http://www.yiichina.com/uploads/images/201707/01143106668.png"></td>
 <td> <img src="https://git.oschina.net/uploads/images/2017/0701/143359_bcbaed34_537766.png"></td>
@@ -159,7 +159,6 @@ yii migrate --migrationPath=vendor/pendalf89/yii2-filemanager/migrations
 </table>
 
 
-
 ## 最后
 
 觉得还行可以给个 star 鼓励下哦 (￣▽￣)~*
@@ -167,5 +166,13 @@ yii migrate --migrationPath=vendor/pendalf89/yii2-filemanager/migrations
 
 项目中还有很多问题和待优化的地方，我会持续更新这个项目。 如果发现有问题的地方或者建议等，很希望能告知联系，大家相互学习，共同进步呀。
 
+
+## 联系方式
+
 邮箱：zengkai001@qq.com
+
+微信：Zen_key
+
+QQ: 156870057
+
 
