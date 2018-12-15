@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\PformSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = '用户表单';
+$this->title = '表单';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <style type="text/css">
@@ -40,14 +40,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'attribute' => 'form_img_url',
-                'format' => 'html',
+                'format' => 'raw',
                 'value' => function($model, $key, $index, $column){
                     if(!empty($model->form_img_url))
                         $form_img_url = '<img src=' . $model->form_img_url .' width=160px height=90px>';
                     else
                         $form_img_url = '<img src=http://usr.im/160x90>';
 
-                    return $form_img_url;
+                    $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
+                    $form_title = $model->title;
+
+                    $preview_btn = "<button class='btn btn-default btn-form-link' style='width:160px' data-toggle='modal' data-target='#myModal1' form_title_attr='".$form_title."' form_link_attr='".$form_link."'><i class='glyphicon glyphicon-phone'></i> 预览表单</button>";
+
+                    return $form_img_url . "<br>" . $preview_btn;
                 },
                 'headerOptions' => array('style'=>'width:160px;'),
             ],
@@ -60,7 +65,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function($model, $key, $index, $column){
 
                     $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
-                    return $model->title . "<br><br>填表链接：<br>" . $form_link;
+                    return $model->title . "<br><br>填表链接(可直接复制以下链接到网站、微信中使用)：<br>" . $form_link;
                 },
                 'headerOptions' => array('style'=>'width:300px;'),
             ],
@@ -73,26 +78,26 @@ $this->params['breadcrumbs'][] = $this->title;
             //     'format' => 'html',
             // ],
 
-            [
-                'label' => '表单预览',
-                'format' => 'raw',
-                'value'=>function ($model, $key, $index, $column) {
-                    //$url = "/customer-pform/create?pform_uid=".$model->uid;
+            // [
+            //     'label' => '表单预览',
+            //     'format' => 'raw',
+            //     'value'=>function ($model, $key, $index, $column) {
+            //         //$url = "/customer-pform/create?pform_uid=".$model->uid;
 
-                    //return Html::a('预览', ['customer-pform/create', 'pform_uid' =>$model->uid]);
-                    //http://pf.beesoft.com/customer-pform/create?pform_uid=594e763b8a4a4
-                    //链接到前端视图， 暂时硬编码。
+            //         //return Html::a('预览', ['customer-pform/create', 'pform_uid' =>$model->uid]);
+            //         //http://pf.beesoft.com/customer-pform/create?pform_uid=594e763b8a4a4
+            //         //链接到前端视图， 暂时硬编码。
 
-                    //return "<a href=". Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid.">预览</a>";
+            //         //return "<a href=". Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid.">预览</a>";
 
-                    $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
-                    $form_title = $model->title;
+            //         $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
+            //         $form_title = $model->title;
 
-                    return "<button class='btn btn-default btn-form-link' data-toggle='modal' data-target='#myModal1' form_title_attr='".$form_title."' form_link_attr='".$form_link."'><i class='glyphicon glyphicon-phone'></i> 预览</button>";
-                },
+            //         return "<button class='btn btn-default btn-form-link' data-toggle='modal' data-target='#myModal1' form_title_attr='".$form_title."' form_link_attr='".$form_link."'><i class='glyphicon glyphicon-phone'></i> 预览</button>";
+            //     },
 
-                //'headerOptions' => array('style'=>'width:70px;'),
-            ],
+            //     //'headerOptions' => array('style'=>'width:70px;'),
+            // ],
 
             [
                 'label' => '包含字段',
@@ -122,36 +127,19 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'description',
             //http://127.0.0.1/adv/backend/web/index.php?PformFieldSearch%5Bpform_uid%5D=594cd9feac29c&r=pform-field
             
-            // ['class' => 'yii\grid\ActionColumn'],
-            // // [
-            // //     'class' => 'yii\grid\ActionColumn', 
-            // //     'template' => '{update}   {delete}',
-            // //     'headerOptions' => array('style'=>'width:12%;'),
-            // // ],
-
-            // ],
-
-                [
-                    'label' => '填单人数',
-                    'format' => 'html',
-                    'value' => function ($model, $key, $index, $column) {
-                        // $customerform_count = \backend\models\CustomerPform::find()
-                        //     ->where(["pform_uid" => $model->uid])
-                        //     ->count();
-                        // $formfield_count = \backend\models\PformField::find()
-                        //     ->where(["pform_uid" => $model->uid])
-                        //     ->count();
-                        // return $customerform_count/$formfield_count;
-                        
-                        $customerform_count = \backend\models\CustomerPform::find()
-                            ->select(['customer_pform_uid'])
-                            ->where(["pform_uid" => $model->uid])
-                            ->distinct()
-                            ->count();
-                        return $customerform_count;
-                    },
-                    'headerOptions' => array('style'=>'width:14%;'),
-                ],
+            [
+                'label' => '填表数',
+                'format' => 'html',
+                'value' => function ($model, $key, $index, $column) {                        
+                    $customerform_count = \backend\models\CustomerPform::find()
+                        ->select(['customer_pform_uid'])
+                        ->where(["pform_uid" => $model->uid])
+                        ->distinct()
+                        ->count();
+                    return $customerform_count;
+                },
+                'headerOptions' => array('style'=>'width:14%;'),
+            ],
 
             [
                 'class' => 'yii\grid\ActionColumn', 
@@ -161,15 +149,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 'headerOptions' => array('style'=>'width:12%;'),
                 'buttons' => [
                     'myview' => function ($url, $model, $key) {
-                        return Html::a('<span class="glyphicon glyphicon-plus" style="color:#5CB85C"></span>&nbsp;', ['pform/view', 'id' => $model->id], ['title' => '添加表单字段']);
+                        return Html::a('<span class="glyphicon glyphicon-plus" style="color:#5CB85C; margin-right:8px">', ['pform/view', 'id' => $model->id], ['title' => '添加表单字段']);
                     },
 
                     'list' => function ($url, $model, $key) {
-                        return Html::a('&nbsp;&nbsp;<span class="glyphicon glyphicon-stats"></span>&nbsp;', ['customer-pform/statistics', 'uid' => $model->uid], ['title' => '查看填表数据']);
+                        return Html::a('<span class="glyphicon glyphicon-stats" style="color:#F0AD4E; margin-right:8px"></span>', ['customer-pform/statistics', 'uid' => $model->uid], ['title' => '查看填表数据']);
                     },
 
                     'addbackcover' => function ($url, $model, $key) {
-                        return Html::a('&nbsp;<span class="glyphicon glyphicon-star-empty"></span>&nbsp;', ['pform-backcover/add', 'uid' => $model->uid], ['title' => '增加填表成功页面']);
+                        return Html::a('<span class="glyphicon glyphicon-star-empty" style="color:#C9302C; margin-right:8px"></span>', ['pform-backcover/add', 'uid' => $model->uid], ['title' => '增加填表成功页面']);
                     },
 
 

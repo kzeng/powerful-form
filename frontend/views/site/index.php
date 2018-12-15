@@ -7,7 +7,7 @@ $this->title = '超级表单';
 
 $slogan = [
     "帮你轻松收集和管理客户数据",
-    "高效 简单 灵活 人人可用",
+    "高效  简单  灵活  人人可用",
     "真诚的倾听您的需求",
 ];
 
@@ -18,17 +18,16 @@ $slogan = [
         
         <div class="jumbotron">
 
-            <h2>超级表单</h2>
+            <h1>超级表单</h1>
 
             <p class="lead" style="color:#fff"><?= $slogan[rand(0,sizeof($slogan)-1)] ?></p>
 
+            <br><br><br>
             <p>
-                <!--
-                <//?= Html::a("现在就去免费创建一个表单", ['admin'], ['class' => 'btn btn-lg btn-success']) ?>
-                -->
-                <a href="<?= Yii::$app->request->hostInfo ?>/admin" class="btn btn-lg btn-success">现在就去免费创建一个表单</a>
+                <a href="<?= Yii::$app->request->hostInfo ?>/admin" class="btn btn-lg btn-success">现在就去免费创建一个表单
+                <span class="glyphicon glyphicon-arrow-right"></span>
+                </a>
             </p>
-
 
         </div>
     </div>

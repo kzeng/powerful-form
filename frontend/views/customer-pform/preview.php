@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<?php
+	use yii\helpers\Html;
+?>
 <title>页面预览</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type="text/css" media="screen">
@@ -395,7 +398,13 @@ $(function() {
 
 <body>
 	<header>
-        <h1>超级表单</h1>
+
+		<h1>
+			<?php 
+				$backlink = Yii::$app->request->hostInfo . "/admin/pform/index";
+			?>
+			<a style="font-size:22px" href="<?= $backlink?>" >< 返回超级表单</a>
+		</h1>
         <ul id="screen-options">
             <li id="iphone" class="active">iPhone</li>
             <li id="iphone-l" >iPhone landscape</li>
@@ -403,10 +412,12 @@ $(function() {
             <li id="ipad-l" >iPad landscape</li>
             <li id="desktop" >Desktop</li>
         </ul>
-        <div class="url-select">
+		<!--
+        /* <div class="url-select">
             <input type="text" name="load" id="getURL"  placeholder="" />
             <input type="submit" value="预览" id="button" />
-        </div>
+        </div> */
+		-->
 	</header>
 	<div id="viewport" class="iphone">
 		<iframe id="displayframe" name="displayframe" height="480" width="320" src=""></iframe>
