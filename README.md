@@ -12,13 +12,13 @@
 
   2. 初始化
 
-     执行 `init` 命令，然后选择 `dev` or `prod` 环境.
+     执行 `init` 命令，然后选择 0 调试版本 `Development` or 1 正式版本`Production` .
 
       ```bash
       cd /var/www/mysite.com/
       php init
       ```
-  
+
   3. 配置Web服务器:
 
      Apache 服务器参考配置如下:
@@ -96,7 +96,8 @@
      ```
     
        
-  4. 创建一个新数据库，调整`components['db']`配置在`common/config/main-local.php`.
+  4. 创建一个新数据库
+   调整`components['db']`数据库连接参数，其配置在`common/config/main-local.php`.
   
 
 ## 数据库
