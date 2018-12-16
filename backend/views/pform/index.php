@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     if(!empty($model->form_img_url))
                         $form_img_url = '<img src=' . $model->form_img_url .' width=160px height=90px>';
                     else
-                        $form_img_url = '<img src=http://usr.im/160x90>';
+                        $form_img_url = '<img src=http://iph.href.lu/160x90?text=preview>';
 
                     $form_link = Yii::$app->request->hostInfo ."/customer-pform/create?pform_uid=".$model->uid;
                     $form_title = $model->title;

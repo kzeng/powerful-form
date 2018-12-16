@@ -24,7 +24,16 @@ use pendalf89\filemanager\widgets\TinyMCE;
     <?= $form->field($model, 'description')->textInput(['maxlength' => true, 'placeholder' => '简短语句描述表单作用']) ?>
 
     <?= $form->field($model, 'file')->fileInput()->hint('1张表单页面头部图片，图片建议尺寸：900像素 * 300像素')  ?>
-
+    <div>
+        <?php
+            if(empty($model->form_img_url))
+            {
+        ?>
+            <img width="160" src="http://iph.href.lu/160x90?text=preview">
+        <?php } else { ?>
+            <img width="160" src="<?= Yii::$app->request->hostInfo . $model->form_img_url ?>">
+        <?php } ?>
+    </div>
 <!--     
     <//?= $form->field($model, 'created_at')->textInput() ?>
 
@@ -34,23 +43,6 @@ use pendalf89\filemanager\widgets\TinyMCE;
 <!--
     <//?= $form->field($model, 'user_id')->textInput() ?>
 -->
-
-
-
-<!--     <、、?= $form->field($model, 'detail')->widget(\yii\redactor\widgets\Redactor::className(), [
-        'clientOptions' => [
-            'minHeight'=>200,
-            'maxHeight'=>400,
-            'imageManagerJson' => ['/redactor/upload/image-json'],
-            'imageUpload' => ['/redactor/upload/image'],
-            'fileUpload' => ['/redactor/upload/file'],
-            'lang' => 'zh_cn',
-            'plugins' => ['clips', 'fontcolor','imagemanager']
-        ]
-    ])?>
- -->
-
-
 
     <?= $form->field($model, 'detail')->widget(TinyMCE::className(), [
         'clientOptions' => [
