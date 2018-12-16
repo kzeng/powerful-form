@@ -64,7 +64,9 @@ class CustomerPform extends \yii\db\ActiveRecord
         foreach ( $customer_pform as $key => $value ) {
             $temp = [];
             foreach ( $pformfield as $k => $val ) {
+                if(empty($value[$val['id']])) continue;
                 $temp[] = $value[$val['id']];
+
             }
             $return_data['data'][] = $temp;
         }

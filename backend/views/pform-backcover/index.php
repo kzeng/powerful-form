@@ -8,16 +8,18 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = '表单成功页面';
+$this->params['breadcrumbs'][] = ['label' => '表单', 'url' => ['pform/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pform-backcover-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
+    <!--
     <p>
-        <?= Html::a('创建', ['create'], ['class' => 'btn btn-success']) ?>
+        <//?= Html::a('创建', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+    -->
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -27,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             //'content:ntext',
             'pform_uid',
-
+        
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

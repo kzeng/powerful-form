@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 $this->title = '客户表单数据统计';
+$this->params['breadcrumbs'][] = ['label' => '表单', 'url' => ['pform/index']];
 $this->params['breadcrumbs'][] = $this->title;
 
 $data = \backend\models\CustomerPform::statistic();
