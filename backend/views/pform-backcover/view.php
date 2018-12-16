@@ -7,7 +7,6 @@ use yii\widgets\DetailView;
 /* @var $model backend\models\PformBackcover */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => '表单成功页面', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pform-backcover-view">

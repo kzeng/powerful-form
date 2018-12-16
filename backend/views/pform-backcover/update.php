@@ -6,7 +6,6 @@ use yii\helpers\Html;
 /* @var $model backend\models\PformBackcover */
 
 $this->title = '修改: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => '表单成功页面', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = '修改';
 ?>

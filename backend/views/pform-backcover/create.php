@@ -7,7 +7,6 @@ use yii\helpers\Html;
 /* @var $model backend\models\PformBackcover */
 
 $this->title = '创建表单成功页面';
-$this->params['breadcrumbs'][] = ['label' => '表单成功页面', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pform-backcover-create">
