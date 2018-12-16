@@ -6,7 +6,7 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 
 use yii\helpers\Html;
-
+use yii\helpers\Url;
 /**
  * This is the model class for table "pform".
  *
@@ -122,7 +122,8 @@ class Pform extends \yii\db\ActiveRecord
             $cp->save(false);
          }
 
-        return \yii\helpers\Json::encode(['code' => 0]);
+        $endlink = Url::to(['/customer-pform/ok', 'form_uid' => $form_uid]);
+        return \yii\helpers\Json::encode(['code' => 0, 'endlink' => $endlink]);
     }
 
 

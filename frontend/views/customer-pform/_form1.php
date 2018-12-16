@@ -128,9 +128,7 @@ $customerform_count = \backend\models\CustomerPform::find()
 	            success: function (ret) {
 	            	if(ret['code'] ==0)
 	            		alert('您已经成功提交表单，谢谢。');
-
-	                	//location.reload();
-	                	location.href = '<?php echo Url::to(['/customer-pform/ok'], true) ?>';
+						location.href = ret['endlink'];
 	            },
 	            error: function () {
 	            }

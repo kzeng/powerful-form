@@ -136,6 +136,7 @@ class CustomerPformController extends Controller
     public function actionOk()
     {
         $this->layout = 'myform';
-        return $this->render('ok');
+        $form_uid = $_GET['form_uid'];
+        return $this->render('ok', ['form_uid' => $form_uid]);
     }
 }
