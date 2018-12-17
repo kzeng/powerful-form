@@ -13,10 +13,6 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <!--
-    <p>Please fill out the following fields to login:</p>
-    -->
-
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
@@ -30,10 +26,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="form-group">
                     <?= Html::submitButton('登录', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                     &nbsp;&nbsp;
-                    <!--
-                    <//?= Html::a("还没有帐号，现在免费注册！", ['site/signup']) ?>
-                    -->
-
                     <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/site/signup">还没有帐号，现在免费注册！</a>
                 </div>
 
