@@ -29,9 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/site/signup">还没有帐号，现在免费注册！</a>
                 </div>
 
-                
-
-
             <?php ActiveForm::end(); ?>
         </div>
     </div>

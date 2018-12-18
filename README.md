@@ -122,10 +122,9 @@ yii migrate --migrationPath=vendor/pendalf89/yii2-filemanager/migrations
 5. 用户能轻松的导出数据。
 6. 表单创建时可以预览效果。
 7. 表单提交成功后的结束页面。
-8. 前端首页再设计.https://github.com/alvarotrigo/fullPage.js
-（全屏滚动插件演示：http://www.dowebok.com/demo/2014/77/）
+8. 前端首页再设计,全屏风格。
 9. 增加手机预览功能，二维码。
-
+10. 新增提交表单后落脚页面的配置。
 
 ### 即将支持功能
 1. 收集数据的类型：单选、多选、图片
