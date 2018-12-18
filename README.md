@@ -137,7 +137,7 @@ yii migrate --migrationPath=vendor/pendalf89/yii2-filemanager/migrations
 
 <table width="60%">
 <tr>
-<td><img src="http://www.yiichina.com/uploads/images/201707/01143106668.png"></td>
+<td><img src="https://images.gitee.com/uploads/images/2018/1218/214609_a72e382d_537766.png"></td>
 <td> <img src="https://git.oschina.net/uploads/images/2017/0701/143359_bcbaed34_537766.png"></td>
 </tr>
 
