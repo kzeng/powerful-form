@@ -149,15 +149,19 @@ $this->params['breadcrumbs'][] = $this->title;
                 'headerOptions' => array('style'=>'width:12%;'),
                 'buttons' => [
                     'myview' => function ($url, $model, $key) {
-                        return Html::a('<span class="glyphicon glyphicon-plus" style="color:#5CB85C; margin-left:8px">', ['pform/view', 'id' => $model->id], ['title' => '添加表单字段']);
+                        return Html::a('<span class="glyphicon glyphicon-plus" style="color:#5CB85C; margin-left:8px; font-size:28px">', ['pform/view', 'id' => $model->id], ['title' => '添加表单字段']);
                     },
 
                     'list' => function ($url, $model, $key) {
-                        return Html::a('<span class="glyphicon glyphicon-stats" style="color:#F0AD4E; margin-left:8px"></span>', ['customer-pform/statistics', 'uid' => $model->uid], ['title' => '查看填表数据']);
+                        return Html::a('<span class="glyphicon glyphicon-stats" style="color:#F0AD4E; margin-left:8px; font-size:28px"></span>', ['customer-pform/statistics', 'uid' => $model->uid], ['title' => '查看填表数据']);
+                    },
+
+                    'update' => function ($url, $model, $key) {
+                        return Html::a('<span class="glyphicon glyphicon-pencil" style="color:#C9302C; margin-left:8px; font-size:28px"></span>', ['pform/update', 'id' => $model->id], ['title' => '修改']);
                     },
 
                     'addbackcover' => function ($url, $model, $key) {
-                        return Html::a('<span class="glyphicon glyphicon-star-empty" style="color:#C9302C; margin-left:8px"></span>', ['pform-backcover/add', 'uid' => $model->uid], ['title' => '增加填表成功页面']);
+                        return Html::a('<span class="glyphicon glyphicon-file" style="color:#337AB7; margin-left:8px; font-size:28px"></span>', ['pform-backcover/add', 'uid' => $model->uid], ['title' => '增加填表成功页面']);
                     },
 
 
